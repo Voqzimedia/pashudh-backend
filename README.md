@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://strapi.io">
+  <a href="https://www.pashudh.com/">
     <img src="./log.png" width="318px" alt="Strapi logo" />
   </a>
 </p>
