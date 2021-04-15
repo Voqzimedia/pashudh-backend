@@ -50,13 +50,13 @@ npm run develop
 <br>
 
 ```bash
-yarn develop
+yarn start
 ```
 
 **or**
 
 ```bash
-npm run develop
+npm start
 ```
 
 Enjoy 🎉
