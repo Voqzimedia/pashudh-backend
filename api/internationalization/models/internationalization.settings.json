@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "internationalizations",
+  "info": {
+    "name": "Internationalization",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "USD",
+        "INR"
+      ],
+      "default": "INR",
+      "required": true
+    }
+  }
+}

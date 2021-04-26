@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/internationalization",
+      "handler": "internationalization.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/internationalization",
+      "handler": "internationalization.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/internationalization",
+      "handler": "internationalization.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

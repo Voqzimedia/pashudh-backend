@@ -19,7 +19,7 @@
     "isSoldOut": {
       "type": "boolean",
       "default": false,
-      "required": true
+      "required": false
     }
   }
 }

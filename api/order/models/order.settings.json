@@ -15,7 +15,12 @@
       "type": "enumeration",
       "enum": [
         "paid",
-        "unpaid"
+        "unpaid",
+        "processing",
+        "completed",
+        "refunded",
+        "canceled",
+        "hold"
       ]
     },
     "total": {

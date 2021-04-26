@@ -597,7 +597,12 @@
             "type": "string",
             "enum": [
               "paid",
-              "unpaid"
+              "unpaid",
+              "processing",
+              "completed",
+              "refunded",
+              "canceled",
+              "hold"
             ]
           },
           "total": {
@@ -646,6 +651,12 @@
                 "type": "component"
               },
               "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "GalleryImgs": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -725,7 +736,12 @@
             "type": "string",
             "enum": [
               "paid",
-              "unpaid"
+              "unpaid",
+              "processing",
+              "completed",
+              "refunded",
+              "canceled",
+              "hold"
             ]
           },
           "total": {

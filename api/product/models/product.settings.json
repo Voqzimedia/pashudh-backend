@@ -18,9 +18,7 @@
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
-        "files",
-        "videos"
+        "images"
       ],
       "plugin": "upload",
       "required": false
@@ -56,8 +54,18 @@
       "required": true
     },
     "categories": {
-      "via": "products",
-      "collection": "category"
+      "collection": "category",
+      "via": "products"
+    },
+    "GalleryImgs": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }
