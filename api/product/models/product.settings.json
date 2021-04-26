@@ -54,6 +54,10 @@
       "repeatable": false,
       "component": "product.inventory",
       "required": true
+    },
+    "categories": {
+      "via": "products",
+      "collection": "category"
     }
   }
 }

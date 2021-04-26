@@ -696,7 +696,8 @@
             "required": [
               "id",
               "SKU",
-              "Stock"
+              "Stock",
+              "isSoldOut"
             ],
             "properties": {
               "id": {
@@ -707,6 +708,47 @@
               },
               "Stock": {
                 "type": "integer"
+              },
+              "isSoldOut": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "uid"
+                },
+                "products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "subTitle": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -796,7 +838,8 @@
             "required": [
               "id",
               "SKU",
-              "Stock"
+              "Stock",
+              "isSoldOut"
             ],
             "properties": {
               "id": {
@@ -807,7 +850,17 @@
               },
               "Stock": {
                 "type": "integer"
+              },
+              "isSoldOut": {
+                "type": "boolean",
+                "default": false
               }
+            }
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           },
           "published_at": {
