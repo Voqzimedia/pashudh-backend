@@ -596,6 +596,12 @@
           "subTitle": {
             "type": "string"
           },
+          "tagLine": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -617,6 +623,12 @@
             }
           },
           "subTitle": {
+            "type": "string"
+          },
+          "tagLine": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           },
           "published_at": {

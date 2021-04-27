@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/26/2021 9:25:44 PM"
+    "x-generation-date": "04/27/2021 8:57:42 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4139,6 +4139,12 @@
           "subTitle": {
             "type": "string"
           },
+          "tagLine": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -4160,6 +4166,12 @@
             }
           },
           "subTitle": {
+            "type": "string"
+          },
+          "tagLine": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           },
           "published_at": {
@@ -4562,10 +4574,10 @@
               "SareeLength": {
                 "type": "string"
               },
-              "Wash": {
+              "HowToWash": {
                 "type": "string"
               },
-              "Delivery": {
+              "Shipping": {
                 "type": "string"
               },
               "Colours": {
@@ -4579,6 +4591,9 @@
               },
               "Weight": {
                 "type": "number"
+              },
+              "BlousePiece": {
+                "type": "string"
               }
             }
           },
@@ -4628,6 +4643,12 @@
                   }
                 },
                 "subTitle": {
+                  "type": "string"
+                },
+                "tagLine": {
+                  "type": "string"
+                },
+                "description": {
                   "type": "string"
                 },
                 "published_at": {
@@ -4773,10 +4794,10 @@
               "SareeLength": {
                 "type": "string"
               },
-              "Wash": {
+              "HowToWash": {
                 "type": "string"
               },
-              "Delivery": {
+              "Shipping": {
                 "type": "string"
               },
               "Colours": {
@@ -4790,6 +4811,9 @@
               },
               "Weight": {
                 "type": "number"
+              },
+              "BlousePiece": {
+                "type": "string"
               }
             }
           },

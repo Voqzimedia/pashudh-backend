@@ -19,11 +19,18 @@
       "targetField": "title"
     },
     "products": {
-      "via": "categories",
       "collection": "product",
+      "via": "categories",
       "dominant": true
     },
     "subTitle": {
+      "type": "string"
+    },
+    "tagLine": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
       "type": "string"
     }
   }

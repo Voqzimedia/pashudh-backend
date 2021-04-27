@@ -13,11 +13,13 @@
     "SareeLength": {
       "type": "string"
     },
-    "Wash": {
-      "type": "string"
+    "HowToWash": {
+      "type": "string",
+      "required": false
     },
-    "Delivery": {
-      "type": "string"
+    "Shipping": {
+      "type": "string",
+      "required": false
     },
     "Colours": {
       "type": "string"
@@ -30,6 +32,9 @@
     },
     "Weight": {
       "type": "decimal"
+    },
+    "BlousePiece": {
+      "type": "string"
     }
   }
 }

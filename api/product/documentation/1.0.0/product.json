@@ -671,10 +671,10 @@
               "SareeLength": {
                 "type": "string"
               },
-              "Wash": {
+              "HowToWash": {
                 "type": "string"
               },
-              "Delivery": {
+              "Shipping": {
                 "type": "string"
               },
               "Colours": {
@@ -688,6 +688,9 @@
               },
               "Weight": {
                 "type": "number"
+              },
+              "BlousePiece": {
+                "type": "string"
               }
             }
           },
@@ -737,6 +740,12 @@
                   }
                 },
                 "subTitle": {
+                  "type": "string"
+                },
+                "tagLine": {
+                  "type": "string"
+                },
+                "description": {
                   "type": "string"
                 },
                 "published_at": {
@@ -882,10 +891,10 @@
               "SareeLength": {
                 "type": "string"
               },
-              "Wash": {
+              "HowToWash": {
                 "type": "string"
               },
-              "Delivery": {
+              "Shipping": {
                 "type": "string"
               },
               "Colours": {
@@ -899,6 +908,9 @@
               },
               "Weight": {
                 "type": "number"
+              },
+              "BlousePiece": {
+                "type": "string"
               }
             }
           },
