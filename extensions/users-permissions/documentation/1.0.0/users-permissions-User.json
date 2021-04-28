@@ -1262,7 +1262,16 @@
                   "type": "string"
                 },
                 "status": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": [
+                    "paid",
+                    "unpaid",
+                    "processing",
+                    "completed",
+                    "refunded",
+                    "canceled",
+                    "hold"
+                  ]
                 },
                 "total": {
                   "type": "number"
