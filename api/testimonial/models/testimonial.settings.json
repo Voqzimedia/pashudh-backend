@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonials",
+  "info": {
+    "name": "Testimonial"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Testimonial": {
+      "type": "text"
+    },
+    "User": {
+      "via": "Testimonials",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "Approved": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -567,6 +567,15 @@
                     "type": "string"
                   }
                 },
+                "Testimonials": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "ProfilePic": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },

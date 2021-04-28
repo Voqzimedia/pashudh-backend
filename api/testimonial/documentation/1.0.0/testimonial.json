@@ -1,77 +1,6 @@
 {
   "paths": {
-    "/orders/confirm": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Order"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/orders": {
+    "/testimonials": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -83,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Order"
+                    "$ref": "#/components/schemas/Testimonial"
                   }
                 }
               }
@@ -122,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Testimonial"
         ],
         "parameters": [
           {
@@ -272,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Testimonial"
                 }
               }
             }
@@ -310,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Testimonial"
         ],
         "requestBody": {
           "description": "",
@@ -318,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder"
+                "$ref": "#/components/schemas/NewTestimonial"
               }
             }
           }
         }
       }
     },
-    "/orders/count": {
+    "/testimonials/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -377,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Testimonial"
         ],
         "parameters": []
       }
     },
-    "/orders/{id}": {
+    "/testimonials/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -392,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Testimonial"
                 }
               }
             }
@@ -430,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Testimonial"
         ],
         "parameters": [
           {
@@ -454,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Testimonial"
                 }
               }
             }
@@ -492,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Testimonial"
         ],
         "requestBody": {
           "description": "",
@@ -500,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder"
+                "$ref": "#/components/schemas/NewTestimonial"
               }
             }
           }
@@ -566,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Testimonial"
         ],
         "parameters": [
           {
@@ -585,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Order": {
+      "Testimonial": {
         "required": [
           "id"
         ],
@@ -593,87 +522,10 @@
           "id": {
             "type": "string"
           },
-          "status": {
-            "type": "string",
-            "enum": [
-              "paid",
-              "unpaid",
-              "processing",
-              "completed",
-              "refunded",
-              "canceled",
-              "hold"
-            ]
-          },
-          "total": {
-            "type": "number"
-          },
-          "checkout_session": {
+          "Testimonial": {
             "type": "string"
           },
-          "product": {
-            "required": [
-              "id",
-              "StockDetails"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "image": {
-                "type": "string"
-              },
-              "content": {
-                "type": "string"
-              },
-              "price": {
-                "type": "number"
-              },
-              "slug": {
-                "type": "uid"
-              },
-              "orders": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "SEO": {
-                "type": "component"
-              },
-              "ProductDetails": {
-                "type": "component"
-              },
-              "StockDetails": {
-                "type": "component"
-              },
-              "categories": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "GalleryImgs": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "user": {
+          "User": {
             "required": [
               "id",
               "username",
@@ -733,37 +585,27 @@
               }
             }
           },
+          "Approved": {
+            "type": "boolean",
+            "default": false
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewOrder": {
+      "NewTestimonial": {
         "properties": {
-          "status": {
-            "type": "string",
-            "enum": [
-              "paid",
-              "unpaid",
-              "processing",
-              "completed",
-              "refunded",
-              "canceled",
-              "hold"
-            ]
-          },
-          "total": {
-            "type": "number"
-          },
-          "checkout_session": {
+          "Testimonial": {
             "type": "string"
           },
-          "product": {
+          "User": {
             "type": "string"
           },
-          "user": {
-            "type": "string"
+          "Approved": {
+            "type": "boolean",
+            "default": false
           },
           "published_at": {
             "type": "string",
@@ -781,7 +623,7 @@
   },
   "tags": [
     {
-      "name": "Order"
+      "name": "Testimonial"
     }
   ]
 }
