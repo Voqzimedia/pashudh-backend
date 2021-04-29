@@ -1301,7 +1301,9 @@
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "Testimonial",
+                "NickName"
               ],
               "properties": {
                 "id": {
@@ -1315,6 +1317,9 @@
                 },
                 "Approved": {
                   "type": "boolean"
+                },
+                "NickName": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"

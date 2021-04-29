@@ -516,7 +516,9 @@
     "schemas": {
       "Testimonial": {
         "required": [
-          "id"
+          "id",
+          "Testimonial",
+          "NickName"
         ],
         "properties": {
           "id": {
@@ -589,6 +591,9 @@
             "type": "boolean",
             "default": false
           },
+          "NickName": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -596,6 +601,10 @@
         }
       },
       "NewTestimonial": {
+        "required": [
+          "Testimonial",
+          "NickName"
+        ],
         "properties": {
           "Testimonial": {
             "type": "string"
@@ -606,6 +615,9 @@
           "Approved": {
             "type": "boolean",
             "default": false
+          },
+          "NickName": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

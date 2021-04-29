@@ -64,8 +64,8 @@
       "via": "user"
     },
     "Testimonials": {
-      "collection": "testimonial",
-      "via": "User"
+      "via": "User",
+      "collection": "testimonial"
     },
     "ProfilePic": {
       "model": "file",

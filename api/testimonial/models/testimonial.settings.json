@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "testimonials",
   "info": {
-    "name": "Testimonial"
+    "name": "Testimonial",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,16 +12,21 @@
   },
   "attributes": {
     "Testimonial": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "User": {
-      "via": "Testimonials",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "Testimonials"
     },
     "Approved": {
       "type": "boolean",
       "default": false
+    },
+    "NickName": {
+      "type": "string",
+      "required": true
     }
   }
 }
