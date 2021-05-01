@@ -113,3 +113,12 @@ license.txt
 exports
 .cache
 build
+
+
+############################
+# Heroku
+############################
+
+yarn.lock
+yarn-error.log
+.strapi-updater.json
