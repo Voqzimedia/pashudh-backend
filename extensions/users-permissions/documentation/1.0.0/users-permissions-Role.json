@@ -576,6 +576,12 @@
                 "ProfilePic": {
                   "type": "string"
                 },
+                "promos": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },

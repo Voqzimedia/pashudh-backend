@@ -1399,6 +1399,41 @@
                 "type": "string"
               }
             }
+          },
+          "promos": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "promo"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "promo": {
+                  "type": "string"
+                },
+                "giftcard": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "promoPrice": {
+                  "type": "number"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1448,6 +1483,12 @@
             }
           },
           "Testimonials": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "promos": {
             "type": "array",
             "items": {
               "type": "string"

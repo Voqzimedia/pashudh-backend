@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promos",
+  "info": {
+    "name": "promo",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "promo": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "giftcard": {
+      "model": "giftcard",
+      "via": "promos"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "promos"
+    },
+    "promoPrice": {
+      "type": "decimal"
+    }
+  }
+}

@@ -76,6 +76,10 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "promos": {
+      "via": "user",
+      "collection": "promo"
     }
   }
 }

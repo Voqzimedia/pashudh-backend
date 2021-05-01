@@ -1,77 +1,6 @@
 {
   "paths": {
-    "/orders/confirm": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Order"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/orders": {
+    "/promos": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -83,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Order"
+                    "$ref": "#/components/schemas/Promo"
                   }
                 }
               }
@@ -122,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Promo"
         ],
         "parameters": [
           {
@@ -272,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Promo"
                 }
               }
             }
@@ -310,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Promo"
         ],
         "requestBody": {
           "description": "",
@@ -318,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder"
+                "$ref": "#/components/schemas/NewPromo"
               }
             }
           }
         }
       }
     },
-    "/orders/count": {
+    "/promos/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -377,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Promo"
         ],
         "parameters": []
       }
     },
-    "/orders/{id}": {
+    "/promos/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -392,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Promo"
                 }
               }
             }
@@ -430,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Promo"
         ],
         "parameters": [
           {
@@ -454,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Promo"
                 }
               }
             }
@@ -492,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Promo"
         ],
         "requestBody": {
           "description": "",
@@ -500,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder"
+                "$ref": "#/components/schemas/NewPromo"
               }
             }
           }
@@ -566,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Promo"
         ],
         "parameters": [
           {
@@ -585,36 +514,21 @@
   },
   "components": {
     "schemas": {
-      "Order": {
+      "Promo": {
         "required": [
-          "id"
+          "id",
+          "promo"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "status": {
-            "type": "string",
-            "enum": [
-              "paid",
-              "unpaid",
-              "processing",
-              "completed",
-              "refunded",
-              "canceled",
-              "hold"
-            ]
-          },
-          "total": {
-            "type": "number"
-          },
-          "checkout_session": {
+          "promo": {
             "type": "string"
           },
-          "product": {
+          "giftcard": {
             "required": [
-              "id",
-              "StockDetails"
+              "id"
             ],
             "properties": {
               "id": {
@@ -623,40 +537,16 @@
               "name": {
                 "type": "string"
               },
-              "image": {
-                "type": "string"
-              },
-              "content": {
-                "type": "string"
+              "slug": {
+                "type": "uid"
               },
               "price": {
                 "type": "number"
               },
-              "slug": {
-                "type": "uid"
+              "description": {
+                "type": "string"
               },
-              "orders": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "SEO": {
-                "type": "component"
-              },
-              "ProductDetails": {
-                "type": "component"
-              },
-              "StockDetails": {
-                "type": "component"
-              },
-              "categories": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "GalleryImgs": {
+              "promos": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -739,37 +629,31 @@
               }
             }
           },
+          "promoPrice": {
+            "type": "number"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewOrder": {
+      "NewPromo": {
+        "required": [
+          "promo"
+        ],
         "properties": {
-          "status": {
-            "type": "string",
-            "enum": [
-              "paid",
-              "unpaid",
-              "processing",
-              "completed",
-              "refunded",
-              "canceled",
-              "hold"
-            ]
-          },
-          "total": {
-            "type": "number"
-          },
-          "checkout_session": {
+          "promo": {
             "type": "string"
           },
-          "product": {
+          "giftcard": {
             "type": "string"
           },
           "user": {
             "type": "string"
+          },
+          "promoPrice": {
+            "type": "number"
           },
           "published_at": {
             "type": "string",
@@ -787,7 +671,7 @@
   },
   "tags": [
     {
-      "name": "Order"
+      "name": "Promo"
     }
   ]
 }

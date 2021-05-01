@@ -1,77 +1,6 @@
 {
   "paths": {
-    "/orders/confirm": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Order"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/orders": {
+    "/giftcards": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -83,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Order"
+                    "$ref": "#/components/schemas/Giftcard"
                   }
                 }
               }
@@ -122,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Giftcard"
         ],
         "parameters": [
           {
@@ -272,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Giftcard"
                 }
               }
             }
@@ -310,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Giftcard"
         ],
         "requestBody": {
           "description": "",
@@ -318,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder"
+                "$ref": "#/components/schemas/NewGiftcard"
               }
             }
           }
         }
       }
     },
-    "/orders/count": {
+    "/giftcards/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -377,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Giftcard"
         ],
         "parameters": []
       }
     },
-    "/orders/{id}": {
+    "/giftcards/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -392,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Giftcard"
                 }
               }
             }
@@ -430,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Giftcard"
         ],
         "parameters": [
           {
@@ -454,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Giftcard"
                 }
               }
             }
@@ -492,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Giftcard"
         ],
         "requestBody": {
           "description": "",
@@ -500,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder"
+                "$ref": "#/components/schemas/NewGiftcard"
               }
             }
           }
@@ -566,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Giftcard"
         ],
         "parameters": [
           {
@@ -585,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Order": {
+      "Giftcard": {
         "required": [
           "id"
         ],
@@ -593,149 +522,50 @@
           "id": {
             "type": "string"
           },
-          "status": {
-            "type": "string",
-            "enum": [
-              "paid",
-              "unpaid",
-              "processing",
-              "completed",
-              "refunded",
-              "canceled",
-              "hold"
-            ]
-          },
-          "total": {
-            "type": "number"
-          },
-          "checkout_session": {
+          "name": {
             "type": "string"
           },
-          "product": {
-            "required": [
-              "id",
-              "StockDetails"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "image": {
-                "type": "string"
-              },
-              "content": {
-                "type": "string"
-              },
-              "price": {
-                "type": "number"
-              },
-              "slug": {
-                "type": "uid"
-              },
-              "orders": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "SEO": {
-                "type": "component"
-              },
-              "ProductDetails": {
-                "type": "component"
-              },
-              "StockDetails": {
-                "type": "component"
-              },
-              "categories": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "GalleryImgs": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "slug": {
+            "type": "uid"
           },
-          "user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "orders": {
-                "type": "array",
-                "items": {
+          "price": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "promos": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "promo"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "promo": {
+                  "type": "string"
+                },
+                "giftcard": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "promoPrice": {
+                  "type": "number"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "Testimonials": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "ProfilePic": {
-                "type": "string"
-              },
-              "promos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
@@ -745,31 +575,25 @@
           }
         }
       },
-      "NewOrder": {
+      "NewGiftcard": {
         "properties": {
-          "status": {
-            "type": "string",
-            "enum": [
-              "paid",
-              "unpaid",
-              "processing",
-              "completed",
-              "refunded",
-              "canceled",
-              "hold"
-            ]
+          "name": {
+            "type": "string"
           },
-          "total": {
+          "slug": {
+            "type": "uid"
+          },
+          "price": {
             "type": "number"
           },
-          "checkout_session": {
+          "description": {
             "type": "string"
           },
-          "product": {
-            "type": "string"
-          },
-          "user": {
-            "type": "string"
+          "promos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -787,7 +611,7 @@
   },
   "tags": [
     {
-      "name": "Order"
+      "name": "Giftcard"
     }
   ]
 }
