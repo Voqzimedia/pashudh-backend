@@ -66,6 +66,14 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "classes": {
+      "via": "products",
+      "collection": "class"
+    },
+    "colors": {
+      "via": "products",
+      "collection": "color"
     }
   }
 }
