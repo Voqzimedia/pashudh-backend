@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/06/2021 8:45:39 PM"
+    "x-generation-date": "05/06/2021 10:26:35 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7134,13 +7134,13 @@
             "items": {
               "required": [
                 "id",
-                "promo"
+                "promoCode"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "promo": {
+                "promoCode": {
                   "type": "string"
                 },
                 "giftcard": {
@@ -7151,6 +7151,15 @@
                 },
                 "promoPrice": {
                   "type": "number"
+                },
+                "checkout_session": {
+                  "type": "string"
+                },
+                "transactionId": {
+                  "type": "string"
+                },
+                "redeemed": {
+                  "type": "boolean"
                 },
                 "published_at": {
                   "type": "string"
@@ -7280,7 +7289,8 @@
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "phone"
             ],
             "properties": {
               "id": {
@@ -7335,6 +7345,9 @@
                 }
               },
               "redeemPoints": {
+                "type": "integer"
+              },
+              "phone": {
                 "type": "integer"
               },
               "created_by": {
@@ -7432,6 +7445,41 @@
           },
           "address": {
             "type": "string"
+          },
+          "transactionId": {
+            "type": "string"
+          },
+          "Shipping": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "trackingCode": {
+                "type": "string"
+              },
+              "shippingProvider": {
+                "type": "string",
+                "enum": [
+                  "FedEx",
+                  "DTDC",
+                  "ECOMExpress",
+                  "BlueDart",
+                  "Delhivery",
+                  "DHL",
+                  "IndiaPost",
+                  "FirstFlightCouriers",
+                  "GoJavas",
+                  "Shiprocket"
+                ]
+              },
+              "shippingInfo": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -7549,6 +7597,41 @@
           },
           "address": {
             "type": "string"
+          },
+          "transactionId": {
+            "type": "string"
+          },
+          "Shipping": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "trackingCode": {
+                "type": "string"
+              },
+              "shippingProvider": {
+                "type": "string",
+                "enum": [
+                  "FedEx",
+                  "DTDC",
+                  "ECOMExpress",
+                  "BlueDart",
+                  "Delhivery",
+                  "DHL",
+                  "IndiaPost",
+                  "FirstFlightCouriers",
+                  "GoJavas",
+                  "Shiprocket"
+                ]
+              },
+              "shippingInfo": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -8043,13 +8126,13 @@
       "Promo": {
         "required": [
           "id",
-          "promo"
+          "promoCode"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "promo": {
+          "promoCode": {
             "type": "string"
           },
           "giftcard": {
@@ -8093,7 +8176,8 @@
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "phone"
             ],
             "properties": {
               "id": {
@@ -8150,6 +8234,9 @@
               "redeemPoints": {
                 "type": "integer"
               },
+              "phone": {
+                "type": "integer"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -8161,6 +8248,16 @@
           "promoPrice": {
             "type": "number"
           },
+          "checkout_session": {
+            "type": "string"
+          },
+          "transactionId": {
+            "type": "string"
+          },
+          "redeemed": {
+            "type": "boolean",
+            "default": false
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -8169,10 +8266,10 @@
       },
       "NewPromo": {
         "required": [
-          "promo"
+          "promoCode"
         ],
         "properties": {
-          "promo": {
+          "promoCode": {
             "type": "string"
           },
           "giftcard": {
@@ -8183,6 +8280,16 @@
           },
           "promoPrice": {
             "type": "number"
+          },
+          "checkout_session": {
+            "type": "string"
+          },
+          "transactionId": {
+            "type": "string"
+          },
+          "redeemed": {
+            "type": "boolean",
+            "default": false
           },
           "published_at": {
             "type": "string",
@@ -8213,7 +8320,8 @@
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "phone"
             ],
             "properties": {
               "id": {
@@ -8268,6 +8376,9 @@
                 }
               },
               "redeemPoints": {
+                "type": "integer"
+              },
+              "phone": {
                 "type": "integer"
               },
               "created_by": {
@@ -8388,7 +8499,8 @@
               "required": [
                 "id",
                 "username",
-                "email"
+                "email",
+                "phone"
               ],
               "properties": {
                 "id": {
@@ -8445,6 +8557,9 @@
                 "redeemPoints": {
                   "type": "integer"
                 },
+                "phone": {
+                  "type": "integer"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -8495,7 +8610,8 @@
         "required": [
           "id",
           "username",
-          "email"
+          "email",
+          "phone"
         ],
         "properties": {
           "id": {
@@ -8594,6 +8710,12 @@
                 },
                 "address": {
                   "type": "string"
+                },
+                "transactionId": {
+                  "type": "string"
+                },
+                "Shipping": {
+                  "type": "component"
                 },
                 "published_at": {
                   "type": "string"
@@ -8715,13 +8837,13 @@
             "items": {
               "required": [
                 "id",
-                "promo"
+                "promoCode"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "promo": {
+                "promoCode": {
                   "type": "string"
                 },
                 "giftcard": {
@@ -8732,6 +8854,15 @@
                 },
                 "promoPrice": {
                   "type": "number"
+                },
+                "checkout_session": {
+                  "type": "string"
+                },
+                "transactionId": {
+                  "type": "string"
+                },
+                "redeemed": {
+                  "type": "boolean"
                 },
                 "published_at": {
                   "type": "string"
@@ -8748,13 +8879,17 @@
           "redeemPoints": {
             "type": "integer",
             "default": 500
+          },
+          "phone": {
+            "type": "integer"
           }
         }
       },
       "NewUsersPermissionsUser": {
         "required": [
           "username",
-          "email"
+          "email",
+          "phone"
         ],
         "properties": {
           "username": {
@@ -8811,6 +8946,9 @@
           "redeemPoints": {
             "type": "integer",
             "default": 500
+          },
+          "phone": {
+            "type": "integer"
           },
           "created_by": {
             "type": "string"

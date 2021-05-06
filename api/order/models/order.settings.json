@@ -30,17 +30,25 @@
       "type": "string"
     },
     "user": {
-      "via": "orders",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "orders"
     },
     "Cart": {
       "type": "component",
       "repeatable": true,
-      "component": "cart.cart-items"
+      "component": "checkout.cart-items"
     },
     "address": {
       "type": "text"
+    },
+    "transactionId": {
+      "type": "string"
+    },
+    "Shipping": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shipping.shipping-details"
     }
   }
 }

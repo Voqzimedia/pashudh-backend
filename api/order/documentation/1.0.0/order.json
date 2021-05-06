@@ -615,7 +615,8 @@
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "phone"
             ],
             "properties": {
               "id": {
@@ -670,6 +671,9 @@
                 }
               },
               "redeemPoints": {
+                "type": "integer"
+              },
+              "phone": {
                 "type": "integer"
               },
               "created_by": {
@@ -767,6 +771,41 @@
           },
           "address": {
             "type": "string"
+          },
+          "transactionId": {
+            "type": "string"
+          },
+          "Shipping": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "trackingCode": {
+                "type": "string"
+              },
+              "shippingProvider": {
+                "type": "string",
+                "enum": [
+                  "FedEx",
+                  "DTDC",
+                  "ECOMExpress",
+                  "BlueDart",
+                  "Delhivery",
+                  "DHL",
+                  "IndiaPost",
+                  "FirstFlightCouriers",
+                  "GoJavas",
+                  "Shiprocket"
+                ]
+              },
+              "shippingInfo": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -884,6 +923,41 @@
           },
           "address": {
             "type": "string"
+          },
+          "transactionId": {
+            "type": "string"
+          },
+          "Shipping": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "trackingCode": {
+                "type": "string"
+              },
+              "shippingProvider": {
+                "type": "string",
+                "enum": [
+                  "FedEx",
+                  "DTDC",
+                  "ECOMExpress",
+                  "BlueDart",
+                  "Delhivery",
+                  "DHL",
+                  "IndiaPost",
+                  "FirstFlightCouriers",
+                  "GoJavas",
+                  "Shiprocket"
+                ]
+              },
+              "shippingInfo": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
