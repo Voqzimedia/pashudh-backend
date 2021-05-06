@@ -30,13 +30,20 @@
       "type": "string"
     },
     "product": {
-      "via": "orders",
-      "model": "product"
+      "model": "product",
+      "via": "orders"
     },
     "user": {
-      "via": "orders",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "orders"
+    },
+    "Cart": {
+      "type": "dynamiczone",
+      "components": [
+        "cart.cart-items"
+      ],
+      "required": false
     }
   }
 }

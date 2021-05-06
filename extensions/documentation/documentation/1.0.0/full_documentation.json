@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/04/2021 2:05:38 PM"
+    "x-generation-date": "05/06/2021 1:31:07 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7434,6 +7434,106 @@
               }
             }
           },
+          "Cart": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "cart.cart-items"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "product": {
+                      "required": [
+                        "id",
+                        "StockDetails"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "image": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "string"
+                        },
+                        "price": {
+                          "type": "number"
+                        },
+                        "slug": {
+                          "type": "uid"
+                        },
+                        "orders": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "SEO": {
+                          "type": "component"
+                        },
+                        "ProductDetails": {
+                          "type": "component"
+                        },
+                        "StockDetails": {
+                          "type": "component"
+                        },
+                        "categories": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "GalleryImgs": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "classes": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "colors": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "quantity": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7465,6 +7565,106 @@
           },
           "user": {
             "type": "string"
+          },
+          "Cart": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "cart.cart-items"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "product": {
+                      "required": [
+                        "id",
+                        "StockDetails"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "image": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "string"
+                        },
+                        "price": {
+                          "type": "number"
+                        },
+                        "slug": {
+                          "type": "uid"
+                        },
+                        "orders": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "SEO": {
+                          "type": "component"
+                        },
+                        "ProductDetails": {
+                          "type": "component"
+                        },
+                        "StockDetails": {
+                          "type": "component"
+                        },
+                        "categories": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "GalleryImgs": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "classes": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "colors": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "quantity": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
           },
           "published_at": {
             "type": "string",
@@ -7599,6 +7799,9 @@
                 },
                 "user": {
                   "type": "string"
+                },
+                "Cart": {
+                  "type": "dynamiczone"
                 },
                 "published_at": {
                   "type": "string"
@@ -8550,6 +8753,9 @@
                 },
                 "user": {
                   "type": "string"
+                },
+                "Cart": {
+                  "type": "dynamiczone"
                 },
                 "published_at": {
                   "type": "string"

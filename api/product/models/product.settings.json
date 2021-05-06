@@ -34,8 +34,8 @@
       "targetField": "name"
     },
     "orders": {
-      "collection": "order",
-      "via": "product"
+      "via": "product",
+      "collection": "order"
     },
     "SEO": {
       "type": "component",

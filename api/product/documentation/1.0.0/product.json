@@ -636,6 +636,9 @@
                 "user": {
                   "type": "string"
                 },
+                "Cart": {
+                  "type": "dynamiczone"
+                },
                 "published_at": {
                   "type": "string"
                 },
