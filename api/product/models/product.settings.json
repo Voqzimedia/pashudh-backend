@@ -33,10 +33,6 @@
       "type": "uid",
       "targetField": "name"
     },
-    "orders": {
-      "via": "product",
-      "collection": "order"
-    },
     "SEO": {
       "type": "component",
       "repeatable": false,

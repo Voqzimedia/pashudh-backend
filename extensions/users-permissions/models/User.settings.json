@@ -60,12 +60,12 @@
       "configurable": false
     },
     "orders": {
-      "via": "user",
-      "collection": "order"
+      "collection": "order",
+      "via": "user"
     },
     "Testimonials": {
-      "via": "User",
-      "collection": "testimonial"
+      "collection": "testimonial",
+      "via": "User"
     },
     "ProfilePic": {
       "model": "file",
@@ -78,8 +78,14 @@
       "pluginOptions": {}
     },
     "promos": {
-      "via": "user",
-      "collection": "promo"
+      "collection": "promo",
+      "via": "user"
+    },
+    "redeemPoints": {
+      "type": "integer",
+      "default": 500,
+      "required": false,
+      "min": 50000
     }
   }
 }

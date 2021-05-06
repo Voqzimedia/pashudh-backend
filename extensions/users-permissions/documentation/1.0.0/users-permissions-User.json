@@ -1279,14 +1279,14 @@
                 "checkout_session": {
                   "type": "string"
                 },
-                "product": {
-                  "type": "string"
-                },
                 "user": {
                   "type": "string"
                 },
                 "Cart": {
-                  "type": "dynamiczone"
+                  "type": "component"
+                },
+                "address": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"
@@ -1437,6 +1437,10 @@
                 }
               }
             }
+          },
+          "redeemPoints": {
+            "type": "integer",
+            "default": 500
           }
         }
       },
@@ -1496,6 +1500,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "redeemPoints": {
+            "type": "integer",
+            "default": 500
           },
           "created_by": {
             "type": "string"

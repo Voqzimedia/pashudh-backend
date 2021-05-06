@@ -585,6 +585,9 @@
                   "type": "string"
                 }
               },
+              "redeemPoints": {
+                "type": "integer"
+              },
               "created_by": {
                 "type": "string"
               },

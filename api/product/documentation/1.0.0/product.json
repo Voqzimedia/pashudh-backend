@@ -602,55 +602,6 @@
           "slug": {
             "type": "uid"
           },
-          "orders": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "string",
-                  "enum": [
-                    "paid",
-                    "unpaid",
-                    "processing",
-                    "completed",
-                    "refunded",
-                    "canceled",
-                    "hold"
-                  ]
-                },
-                "total": {
-                  "type": "number"
-                },
-                "checkout_session": {
-                  "type": "string"
-                },
-                "product": {
-                  "type": "string"
-                },
-                "user": {
-                  "type": "string"
-                },
-                "Cart": {
-                  "type": "dynamiczone"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "SEO": {
             "type": "object",
             "required": [
@@ -932,12 +883,6 @@
           },
           "slug": {
             "type": "uid"
-          },
-          "orders": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "SEO": {
             "type": "object",

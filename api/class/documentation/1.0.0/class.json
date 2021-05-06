@@ -554,12 +554,6 @@
                 "slug": {
                   "type": "uid"
                 },
-                "orders": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
                 "SEO": {
                   "type": "component"
                 },
