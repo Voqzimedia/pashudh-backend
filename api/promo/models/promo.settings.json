@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "promo": {
+    "promoCode": {
       "type": "string",
       "required": true,
       "unique": true
@@ -27,6 +27,18 @@
     },
     "promoPrice": {
       "type": "decimal"
+    },
+    "checkout_session": {
+      "type": "string",
+      "unique": true
+    },
+    "transactionId": {
+      "type": "string",
+      "unique": true
+    },
+    "redeemed": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -611,73 +611,12 @@
           "checkout_session": {
             "type": "string"
           },
-          "product": {
-            "required": [
-              "id",
-              "StockDetails"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "image": {
-                "type": "string"
-              },
-              "content": {
-                "type": "string"
-              },
-              "price": {
-                "type": "number"
-              },
-              "slug": {
-                "type": "uid"
-              },
-              "orders": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "SEO": {
-                "type": "component"
-              },
-              "ProductDetails": {
-                "type": "component"
-              },
-              "StockDetails": {
-                "type": "component"
-              },
-              "categories": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "GalleryImgs": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "user": {
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "phone"
             ],
             "properties": {
               "id": {
@@ -731,10 +670,139 @@
                   "type": "string"
                 }
               },
+              "redeemPoints": {
+                "type": "integer"
+              },
+              "phone": {
+                "type": "integer"
+              },
               "created_by": {
                 "type": "string"
               },
               "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "Cart": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "product": {
+                  "required": [
+                    "id",
+                    "StockDetails"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "number"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "SEO": {
+                      "type": "component"
+                    },
+                    "ProductDetails": {
+                      "type": "component"
+                    },
+                    "StockDetails": {
+                      "type": "component"
+                    },
+                    "categories": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "GalleryImgs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "classes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "colors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "quantity": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "address": {
+            "type": "string"
+          },
+          "transactionId": {
+            "type": "string"
+          },
+          "Shipping": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "trackingCode": {
+                "type": "string"
+              },
+              "shippingProvider": {
+                "type": "string",
+                "enum": [
+                  "FedEx",
+                  "DTDC",
+                  "ECOMExpress",
+                  "BlueDart",
+                  "Delhivery",
+                  "DHL",
+                  "IndiaPost",
+                  "FirstFlightCouriers",
+                  "GoJavas",
+                  "Shiprocket"
+                ]
+              },
+              "shippingInfo": {
                 "type": "string"
               }
             }
@@ -765,11 +833,131 @@
           "checkout_session": {
             "type": "string"
           },
-          "product": {
-            "type": "string"
-          },
           "user": {
             "type": "string"
+          },
+          "Cart": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "product": {
+                  "required": [
+                    "id",
+                    "StockDetails"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "number"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "SEO": {
+                      "type": "component"
+                    },
+                    "ProductDetails": {
+                      "type": "component"
+                    },
+                    "StockDetails": {
+                      "type": "component"
+                    },
+                    "categories": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "GalleryImgs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "classes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "colors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "quantity": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "address": {
+            "type": "string"
+          },
+          "transactionId": {
+            "type": "string"
+          },
+          "Shipping": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "trackingCode": {
+                "type": "string"
+              },
+              "shippingProvider": {
+                "type": "string",
+                "enum": [
+                  "FedEx",
+                  "DTDC",
+                  "ECOMExpress",
+                  "BlueDart",
+                  "Delhivery",
+                  "DHL",
+                  "IndiaPost",
+                  "FirstFlightCouriers",
+                  "GoJavas",
+                  "Shiprocket"
+                ]
+              },
+              "shippingInfo": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",

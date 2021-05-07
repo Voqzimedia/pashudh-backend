@@ -517,13 +517,13 @@
       "Promo": {
         "required": [
           "id",
-          "promo"
+          "promoCode"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "promo": {
+          "promoCode": {
             "type": "string"
           },
           "giftcard": {
@@ -567,7 +567,8 @@
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "phone"
             ],
             "properties": {
               "id": {
@@ -621,6 +622,12 @@
                   "type": "string"
                 }
               },
+              "redeemPoints": {
+                "type": "integer"
+              },
+              "phone": {
+                "type": "integer"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -632,6 +639,16 @@
           "promoPrice": {
             "type": "number"
           },
+          "checkout_session": {
+            "type": "string"
+          },
+          "transactionId": {
+            "type": "string"
+          },
+          "redeemed": {
+            "type": "boolean",
+            "default": false
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -640,10 +657,10 @@
       },
       "NewPromo": {
         "required": [
-          "promo"
+          "promoCode"
         ],
         "properties": {
-          "promo": {
+          "promoCode": {
             "type": "string"
           },
           "giftcard": {
@@ -654,6 +671,16 @@
           },
           "promoPrice": {
             "type": "number"
+          },
+          "checkout_session": {
+            "type": "string"
+          },
+          "transactionId": {
+            "type": "string"
+          },
+          "redeemed": {
+            "type": "boolean",
+            "default": false
           },
           "published_at": {
             "type": "string",

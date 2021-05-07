@@ -1188,7 +1188,8 @@
         "required": [
           "id",
           "username",
-          "email"
+          "email",
+          "phone"
         ],
         "properties": {
           "id": {
@@ -1279,11 +1280,20 @@
                 "checkout_session": {
                   "type": "string"
                 },
-                "product": {
-                  "type": "string"
-                },
                 "user": {
                   "type": "string"
+                },
+                "Cart": {
+                  "type": "component"
+                },
+                "address": {
+                  "type": "string"
+                },
+                "transactionId": {
+                  "type": "string"
+                },
+                "Shipping": {
+                  "type": "component"
                 },
                 "published_at": {
                   "type": "string"
@@ -1405,13 +1415,13 @@
             "items": {
               "required": [
                 "id",
-                "promo"
+                "promoCode"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "promo": {
+                "promoCode": {
                   "type": "string"
                 },
                 "giftcard": {
@@ -1422,6 +1432,15 @@
                 },
                 "promoPrice": {
                   "type": "number"
+                },
+                "checkout_session": {
+                  "type": "string"
+                },
+                "transactionId": {
+                  "type": "string"
+                },
+                "redeemed": {
+                  "type": "boolean"
                 },
                 "published_at": {
                   "type": "string"
@@ -1434,13 +1453,21 @@
                 }
               }
             }
+          },
+          "redeemPoints": {
+            "type": "integer",
+            "default": 500
+          },
+          "phone": {
+            "type": "integer"
           }
         }
       },
       "NewUsersPermissionsUser": {
         "required": [
           "username",
-          "email"
+          "email",
+          "phone"
         ],
         "properties": {
           "username": {
@@ -1493,6 +1520,13 @@
             "items": {
               "type": "string"
             }
+          },
+          "redeemPoints": {
+            "type": "integer",
+            "default": 500
+          },
+          "phone": {
+            "type": "integer"
           },
           "created_by": {
             "type": "string"
