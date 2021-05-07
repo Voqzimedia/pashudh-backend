@@ -113,3 +113,10 @@ license.txt
 exports
 .cache
 build
+
+
+############################
+# Hosting
+############################
+
+.strapi-updater.json
