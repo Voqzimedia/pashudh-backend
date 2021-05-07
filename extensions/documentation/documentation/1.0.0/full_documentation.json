@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/06/2021 10:26:35 PM"
+    "x-generation-date": "05/07/2021 8:01:47 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7269,6 +7269,7 @@
           },
           "status": {
             "type": "string",
+            "default": "unpaid",
             "enum": [
               "paid",
               "unpaid",
@@ -7481,6 +7482,12 @@
               }
             }
           },
+          "userEmail": {
+            "type": "string"
+          },
+          "userPhone": {
+            "type": "integer"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7491,6 +7498,7 @@
         "properties": {
           "status": {
             "type": "string",
+            "default": "unpaid",
             "enum": [
               "paid",
               "unpaid",
@@ -7632,6 +7640,12 @@
                 "type": "string"
               }
             }
+          },
+          "userEmail": {
+            "type": "string"
+          },
+          "userPhone": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",
@@ -8716,6 +8730,12 @@
                 },
                 "Shipping": {
                   "type": "component"
+                },
+                "userEmail": {
+                  "type": "string"
+                },
+                "userPhone": {
+                  "type": "integer"
                 },
                 "published_at": {
                   "type": "string"

@@ -21,7 +21,8 @@
         "refunded",
         "canceled",
         "hold"
-      ]
+      ],
+      "default": "unpaid"
     },
     "total": {
       "type": "decimal"
@@ -49,6 +50,12 @@
       "type": "component",
       "repeatable": false,
       "component": "shipping.shipping-details"
+    },
+    "userEmail": {
+      "type": "email"
+    },
+    "userPhone": {
+      "type": "biginteger"
     }
   }
 }

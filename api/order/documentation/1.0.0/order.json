@@ -595,6 +595,7 @@
           },
           "status": {
             "type": "string",
+            "default": "unpaid",
             "enum": [
               "paid",
               "unpaid",
@@ -807,6 +808,12 @@
               }
             }
           },
+          "userEmail": {
+            "type": "string"
+          },
+          "userPhone": {
+            "type": "integer"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -817,6 +824,7 @@
         "properties": {
           "status": {
             "type": "string",
+            "default": "unpaid",
             "enum": [
               "paid",
               "unpaid",
@@ -958,6 +966,12 @@
                 "type": "string"
               }
             }
+          },
+          "userEmail": {
+            "type": "string"
+          },
+          "userPhone": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",

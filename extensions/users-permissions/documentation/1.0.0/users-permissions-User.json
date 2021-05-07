@@ -1295,6 +1295,12 @@
                 "Shipping": {
                   "type": "component"
                 },
+                "userEmail": {
+                  "type": "string"
+                },
+                "userPhone": {
+                  "type": "integer"
+                },
                 "published_at": {
                   "type": "string"
                 },
