@@ -16,9 +16,9 @@
       "required": true
     },
     "User": {
+      "via": "Testimonials",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "Testimonials"
+      "model": "user"
     },
     "Approved": {
       "type": "boolean",

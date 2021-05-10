@@ -528,7 +528,8 @@
               "required": [
                 "id",
                 "username",
-                "email"
+                "email",
+                "phone"
               ],
               "properties": {
                 "id": {
@@ -575,6 +576,18 @@
                 },
                 "ProfilePic": {
                   "type": "string"
+                },
+                "promos": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "redeemPoints": {
+                  "type": "integer"
+                },
+                "phone": {
+                  "type": "integer"
                 },
                 "created_by": {
                   "type": "string"

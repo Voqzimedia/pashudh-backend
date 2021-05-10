@@ -33,10 +33,6 @@
       "type": "uid",
       "targetField": "name"
     },
-    "orders": {
-      "collection": "order",
-      "via": "product"
-    },
     "SEO": {
       "type": "component",
       "repeatable": false,
@@ -66,6 +62,14 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "classes": {
+      "via": "products",
+      "collection": "class"
+    },
+    "colors": {
+      "via": "products",
+      "collection": "color"
     }
   }
 }

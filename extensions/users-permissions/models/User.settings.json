@@ -60,12 +60,12 @@
       "configurable": false
     },
     "orders": {
-      "collection": "order",
-      "via": "user"
+      "via": "user",
+      "collection": "order"
     },
     "Testimonials": {
-      "via": "User",
-      "collection": "testimonial"
+      "collection": "testimonial",
+      "via": "User"
     },
     "ProfilePic": {
       "model": "file",
@@ -76,6 +76,21 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "promos": {
+      "via": "user",
+      "collection": "promo"
+    },
+    "redeemPoints": {
+      "type": "integer",
+      "default": 500,
+      "required": false,
+      "min": 50000
+    },
+    "phone": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
     }
   }
 }

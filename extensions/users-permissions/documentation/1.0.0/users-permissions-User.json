@@ -1188,7 +1188,8 @@
         "required": [
           "id",
           "username",
-          "email"
+          "email",
+          "phone"
         ],
         "properties": {
           "id": {
@@ -1279,11 +1280,26 @@
                 "checkout_session": {
                   "type": "string"
                 },
-                "product": {
-                  "type": "string"
-                },
                 "user": {
                   "type": "string"
+                },
+                "Cart": {
+                  "type": "component"
+                },
+                "address": {
+                  "type": "string"
+                },
+                "transactionId": {
+                  "type": "string"
+                },
+                "Shipping": {
+                  "type": "component"
+                },
+                "userEmail": {
+                  "type": "string"
+                },
+                "userPhone": {
+                  "type": "integer"
                 },
                 "published_at": {
                   "type": "string"
@@ -1399,13 +1415,65 @@
                 "type": "string"
               }
             }
+          },
+          "promos": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "promoCode"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "promoCode": {
+                  "type": "string"
+                },
+                "giftcard": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "promoPrice": {
+                  "type": "number"
+                },
+                "checkout_session": {
+                  "type": "string"
+                },
+                "transactionId": {
+                  "type": "string"
+                },
+                "redeemed": {
+                  "type": "boolean"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "redeemPoints": {
+            "type": "integer",
+            "default": 500
+          },
+          "phone": {
+            "type": "integer"
           }
         }
       },
       "NewUsersPermissionsUser": {
         "required": [
           "username",
-          "email"
+          "email",
+          "phone"
         ],
         "properties": {
           "username": {
@@ -1452,6 +1520,19 @@
             "items": {
               "type": "string"
             }
+          },
+          "promos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "redeemPoints": {
+            "type": "integer",
+            "default": 500
+          },
+          "phone": {
+            "type": "integer"
           },
           "created_by": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/categories": {
+    "/promos": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Category"
+                    "$ref": "#/components/schemas/Promo"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Promo"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Promo"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Promo"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategory"
+                "$ref": "#/components/schemas/NewPromo"
               }
             }
           }
         }
       }
     },
-    "/categories/count": {
+    "/promos/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Promo"
         ],
         "parameters": []
       }
     },
-    "/categories/{id}": {
+    "/promos/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Promo"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Promo"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Promo"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Promo"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategory"
+                "$ref": "#/components/schemas/NewPromo"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Promo"
         ],
         "parameters": [
           {
@@ -514,99 +514,140 @@
   },
   "components": {
     "schemas": {
-      "Category": {
+      "Promo": {
         "required": [
-          "id"
+          "id",
+          "promoCode"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
+          "promoCode": {
             "type": "string"
           },
-          "slug": {
-            "type": "uid"
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "StockDetails"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "content": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "SEO": {
-                  "type": "component"
-                },
-                "ProductDetails": {
-                  "type": "component"
-                },
-                "StockDetails": {
-                  "type": "component"
-                },
-                "categories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "GalleryImgs": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "classes": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "colors": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "giftcard": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "uid"
+              },
+              "price": {
+                "type": "number"
+              },
+              "description": {
+                "type": "string"
+              },
+              "promos": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
-          "subTitle": {
+          "user": {
+            "required": [
+              "id",
+              "username",
+              "email",
+              "phone"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "orders": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "Testimonials": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "ProfilePic": {
+                "type": "string"
+              },
+              "promos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "redeemPoints": {
+                "type": "integer"
+              },
+              "phone": {
+                "type": "integer"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "promoPrice": {
+            "type": "number"
+          },
+          "checkout_session": {
             "type": "string"
           },
-          "tagLine": {
+          "transactionId": {
             "type": "string"
           },
-          "description": {
-            "type": "string"
+          "redeemed": {
+            "type": "boolean",
+            "default": false
           },
           "published_at": {
             "type": "string",
@@ -614,28 +655,32 @@
           }
         }
       },
-      "NewCategory": {
+      "NewPromo": {
+        "required": [
+          "promoCode"
+        ],
         "properties": {
-          "title": {
+          "promoCode": {
             "type": "string"
           },
-          "slug": {
-            "type": "uid"
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "subTitle": {
+          "giftcard": {
             "type": "string"
           },
-          "tagLine": {
+          "user": {
             "type": "string"
           },
-          "description": {
+          "promoPrice": {
+            "type": "number"
+          },
+          "checkout_session": {
             "type": "string"
+          },
+          "transactionId": {
+            "type": "string"
+          },
+          "redeemed": {
+            "type": "boolean",
+            "default": false
           },
           "published_at": {
             "type": "string",
@@ -653,7 +698,7 @@
   },
   "tags": [
     {
-      "name": "Category"
+      "name": "Promo"
     }
   ]
 }
