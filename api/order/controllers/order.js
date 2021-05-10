@@ -75,14 +75,6 @@ module.exports = {
       return res.status(400).send({ error: "Please add a cart items to body" });
     }
 
-    //Retrieve the real product here
-    // const realProduct = await strapi.services.product.findOne({
-    //   id: product.id,
-    // });
-    // if (!realProduct) {
-    //   return res.status(404).send({ error: "This product doesn't exist" });
-    // }
-
     var i;
 
     const cartArray = [];
