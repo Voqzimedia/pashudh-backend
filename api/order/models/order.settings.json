@@ -27,9 +27,6 @@
     "total": {
       "type": "decimal"
     },
-    "checkout_session": {
-      "type": "string"
-    },
     "user": {
       "plugin": "users-permissions",
       "model": "user",
@@ -56,6 +53,9 @@
     },
     "userPhone": {
       "type": "biginteger"
+    },
+    "userName": {
+      "type": "string"
     }
   }
 }

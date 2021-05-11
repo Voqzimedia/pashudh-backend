@@ -609,9 +609,6 @@
           "total": {
             "type": "number"
           },
-          "checkout_session": {
-            "type": "string"
-          },
           "user": {
             "required": [
               "id",
@@ -814,6 +811,9 @@
           "userPhone": {
             "type": "integer"
           },
+          "userName": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -837,9 +837,6 @@
           },
           "total": {
             "type": "number"
-          },
-          "checkout_session": {
-            "type": "string"
           },
           "user": {
             "type": "string"
@@ -972,6 +969,9 @@
           },
           "userPhone": {
             "type": "integer"
+          },
+          "userName": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
