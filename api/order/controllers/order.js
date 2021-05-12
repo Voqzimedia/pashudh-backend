@@ -5,7 +5,7 @@ const stripe = require("stripe")(process.env.STRIPE_PK);
 
 /**
  * Given a dollar amount number, convert it to it's value in cents
- * @param number
+ * @param {Int} number
  */
 const fromDecimalToInt = (number) => parseInt(number * 100);
 
@@ -62,7 +62,7 @@ module.exports = {
 
   /**
    * Create Orders
-   * @param {cartItems:Array} ctx
+   * @param {*} ctx
    * @returns session
    */
 
@@ -171,6 +171,13 @@ module.exports = {
 
     // return { status: true };
   },
+
+  /**
+   * Payment Confirm for the order
+   * @param {*} ctx
+   * @returns
+   */
+
   async confirm(ctx) {
     const { transactionId } = ctx.request.body;
 

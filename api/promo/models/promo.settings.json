@@ -28,10 +28,6 @@
     "promoPrice": {
       "type": "decimal"
     },
-    "checkout_session": {
-      "type": "string",
-      "unique": true
-    },
     "transactionId": {
       "type": "string",
       "unique": true
@@ -39,6 +35,13 @@
     "redeemed": {
       "type": "boolean",
       "default": false
+    },
+    "paid": {
+      "type": "boolean",
+      "default": false
+    },
+    "emailTo": {
+      "type": "email"
     }
   }
 }

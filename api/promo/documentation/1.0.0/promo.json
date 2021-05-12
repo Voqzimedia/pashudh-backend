@@ -639,15 +639,19 @@
           "promoPrice": {
             "type": "number"
           },
-          "checkout_session": {
-            "type": "string"
-          },
           "transactionId": {
             "type": "string"
           },
           "redeemed": {
             "type": "boolean",
             "default": false
+          },
+          "paid": {
+            "type": "boolean",
+            "default": false
+          },
+          "emailTo": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -672,15 +676,19 @@
           "promoPrice": {
             "type": "number"
           },
-          "checkout_session": {
-            "type": "string"
-          },
           "transactionId": {
             "type": "string"
           },
           "redeemed": {
             "type": "boolean",
             "default": false
+          },
+          "paid": {
+            "type": "boolean",
+            "default": false
+          },
+          "emailTo": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

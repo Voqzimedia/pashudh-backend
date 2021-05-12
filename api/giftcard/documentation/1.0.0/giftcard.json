@@ -557,14 +557,17 @@
                 "promoPrice": {
                   "type": "number"
                 },
-                "checkout_session": {
-                  "type": "string"
-                },
                 "transactionId": {
                   "type": "string"
                 },
                 "redeemed": {
                   "type": "boolean"
+                },
+                "paid": {
+                  "type": "boolean"
+                },
+                "emailTo": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"
