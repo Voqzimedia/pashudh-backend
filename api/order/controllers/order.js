@@ -5,7 +5,7 @@ const stripe = require("stripe")(process.env.STRIPE_PK);
 
 /**
  * Given a dollar amount number, convert it to it's value in cents
- * @param number
+ * @param {Int} number
  */
 const fromDecimalToInt = (number) => parseInt(number * 100);
 
@@ -62,14 +62,14 @@ module.exports = {
 
   /**
    * Create Orders
-   * @param {cartItems:Array} ctx
+   * @param {*} ctx
    * @returns session
    */
 
   async create(ctx) {
     const BASE_URL = ctx.request.headers.origin || "http://localhost:3000"; //So we can redirect back
 
-    const { cartItems, address } = ctx.request.body;
+    const { cartItems, address, name, email, phone } = ctx.request.body;
 
     if (!cartItems) {
       return res.status(400).send({ error: "Please add a cart items to body" });
@@ -110,55 +110,92 @@ module.exports = {
       }
     }
 
-    var addressTxt = `${address.line1}, ${address.line2}, ${address.city} - ${address.postal_code},${address.state},${address.country}`;
+    var addressTxt = `${address.line1}, ${
+      address.line2 ? address.line2 + "," : ""
+    } ${address.city} - ${address.postal_code},${address.state},${
+      address.country
+    }`;
 
     // console.log({ cartArray, totalAmount, user, address, addressTxt });
 
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
-      line_items: line_items,
-      customer_email: user.email, //Automatically added by Magic Link
-      mode: "payment",
-      success_url: `${BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: BASE_URL,
-    });
+    // const session = await stripe.checkout.sessions.create({
+    //   payment_method_types: ["card"],
+    //   line_items: line_items,
+    //   customer_email: user.email, //Automatically added by Magic Link
+    //   mode: "payment",
+    //   success_url: `${BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+    //   cancel_url: BASE_URL,
+    // });
 
-    // console.log(session);
+    // console.log(paymentIntent);
 
     //TODO Create Temp Order here
     const newOrder = await strapi.services.order.create({
       user: user.id,
       total: totalAmount,
-      checkout_session: session.id,
       Cart: cartArray,
       address: addressTxt,
-      transactionId: session.payment_intent,
-      userEmail: user.email,
-      userPhone: user.phone,
+      userEmail: email,
+      userPhone: phone,
+      userName: name,
     });
 
-    return { session: session.id, payment_intent: session.payment_intent };
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: fromDecimalToInt(totalAmount),
+      currency: "inr",
+      metadata: {
+        Customer_Name: name,
+        Customer_Email: email,
+        User_Phone: phone,
+        Site_Url: BASE_URL,
+        Order_Id: `OrderId #${newOrder.id}`,
+      },
+      receipt_email: email,
+      description: `Pashudh OrderId #${newOrder.id}`,
+    });
+
+    const updateOrder = await strapi.services.order.update(
+      {
+        id: newOrder.id,
+      },
+      {
+        transactionId: paymentIntent.id,
+      }
+    );
+
+    // console.log(newOrder);
+
+    return {
+      client_secret: paymentIntent.client_secret,
+    };
 
     // return { status: true };
   },
-  async confirm(ctx) {
-    const { checkout_session } = ctx.request.body;
-    console.log("checkout_session", checkout_session);
-    const session = await stripe.checkout.sessions.retrieve(checkout_session);
-    console.log("verify session", session);
 
-    if (session.payment_status === "paid") {
+  /**
+   * Payment Confirm for the order
+   * @param {*} ctx
+   * @returns
+   */
+
+  async confirm(ctx) {
+    const { transactionId } = ctx.request.body;
+
+    const paymentIntent = await stripe.paymentIntents.retrieve(transactionId);
+
+    // console.log("verify session", paymentIntent.status);
+
+    if (paymentIntent.status === "succeeded") {
       //Update order
       const newOrder = await strapi.services.order.update(
         {
-          checkout_session,
+          transactionId,
         },
         {
           status: "paid",
         }
       );
-
-      return newOrder;
+      return sanitizeEntity(newOrder, { model: strapi.models.order });
     } else {
       ctx.throw(
         400,

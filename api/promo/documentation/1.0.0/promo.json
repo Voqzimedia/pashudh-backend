@@ -1,5 +1,76 @@
 {
   "paths": {
+    "/promos/confirm": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Promo"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/promos": {
       "get": {
         "deprecated": false,
@@ -639,15 +710,19 @@
           "promoPrice": {
             "type": "number"
           },
-          "checkout_session": {
-            "type": "string"
-          },
           "transactionId": {
             "type": "string"
           },
           "redeemed": {
             "type": "boolean",
             "default": false
+          },
+          "paid": {
+            "type": "boolean",
+            "default": false
+          },
+          "emailTo": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -672,15 +747,19 @@
           "promoPrice": {
             "type": "number"
           },
-          "checkout_session": {
-            "type": "string"
-          },
           "transactionId": {
             "type": "string"
           },
           "redeemed": {
             "type": "boolean",
             "default": false
+          },
+          "paid": {
+            "type": "boolean",
+            "default": false
+          },
+          "emailTo": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

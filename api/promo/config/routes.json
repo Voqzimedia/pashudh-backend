@@ -1,6 +1,14 @@
 {
   "routes": [
     {
+      "method": "POST",
+      "path": "/promos/confirm",
+      "handler": "promo.confirm",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/promos",
       "handler": "promo.find",
