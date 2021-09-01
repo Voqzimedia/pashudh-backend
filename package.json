@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Pashudh backend API (simple, secure and fast) using Strapi.",
   "scripts": {
-    "develop": "strapi develop",
+    "dev": "strapi develop",
     "start": "strapi start",
     "start:production": "SET NODE_ENV=production& strapi start",
     "build": "strapi build",
