@@ -116,7 +116,9 @@ build
 
 
 ############################
-# Hosting
+# Heroku
 ############################
 
+yarn.lock
+yarn-error.log
 .strapi-updater.json
