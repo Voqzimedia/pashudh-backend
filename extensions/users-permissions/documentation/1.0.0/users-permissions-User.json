@@ -1465,7 +1465,7 @@
           },
           "redeemPoints": {
             "type": "integer",
-            "default": 500
+            "default": 50000
           },
           "phone": {
             "type": "integer"
@@ -1532,7 +1532,7 @@
           },
           "redeemPoints": {
             "type": "integer",
-            "default": 500
+            "default": 50000
           },
           "phone": {
             "type": "integer"

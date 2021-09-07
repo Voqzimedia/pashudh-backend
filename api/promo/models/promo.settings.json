@@ -21,9 +21,9 @@
       "via": "promos"
     },
     "user": {
+      "via": "promos",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "promos"
+      "model": "user"
     },
     "promoPrice": {
       "type": "decimal"
