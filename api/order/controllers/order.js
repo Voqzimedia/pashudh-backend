@@ -123,11 +123,12 @@ module.exports = {
     //   line_items: line_items,
     //   customer_email: user.email, //Automatically added by Magic Link
     //   mode: "payment",
-    //   success_url: `${BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+    //   success_url: `${BASE_URL}/api/paymentIntent?session_id={CHECKOUT_SESSION_ID}`,
     //   cancel_url: BASE_URL,
+    //   billing_address_collection: "required",
     // });
 
-    // console.log(paymentIntent);
+    // console.log(session);
 
     //TODO Create Temp Order here
     const newOrder = await strapi.services.order.create({
@@ -168,6 +169,10 @@ module.exports = {
     return {
       client_secret: paymentIntent.client_secret,
     };
+
+    // return {
+    //   session: session,
+    // };
 
     // return { status: true };
   },
