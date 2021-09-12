@@ -135,6 +135,32 @@ module.exports = {
     };
   },
 
+  async validate(ctx) {
+    const { code } = ctx.params;
+
+    // console.log(code);
+
+    if (!code) {
+      return null;
+    }
+
+    const entity = await strapi.services.promo.findOne({ promoCode: code });
+
+    if (!entity) {
+      return null;
+    }
+
+    const tempData = {
+      promoCode: entity.promoCode,
+      price: entity.promoPrice,
+      isValid: !entity.redeemed,
+      giftcard: entity.giftcard.name,
+      id: entity.id,
+    };
+
+    return tempData;
+  },
+
   /**
    * Payment Confirm for the order
    * @param {*} ctx

@@ -69,11 +69,14 @@ module.exports = {
   async create(ctx) {
     const BASE_URL = ctx.request.headers.origin || "http://localhost:3000"; //So we can redirect back
 
-    const { cartItems, address, name, email, phone } = ctx.request.body;
+    const { cartItems, address, name, email, phone, saveMe, discount } =
+      ctx.request.body;
 
     if (!cartItems) {
       return res.status(400).send({ error: "Please add a cart items to body" });
     }
+
+    // console.log({ saveMe, discount });
 
     var i;
 
@@ -81,6 +84,11 @@ module.exports = {
     const line_items = [];
 
     var totalAmount = 0;
+
+    var promo = {
+      id: null,
+      promoPrice: 0,
+    };
 
     const { user } = ctx.state; //From JWT
 
@@ -116,7 +124,15 @@ module.exports = {
       address.country
     }`;
 
-    // console.log({ cartArray, totalAmount, user, address, addressTxt });
+    if (discount) {
+      var tempPromo = await strapi.services.promo.findOne({
+        promoCode: discount.promoCode,
+      });
+
+      promo = tempPromo;
+
+      totalAmount = totalAmount - promo.promoPrice;
+    }
 
     // const session = await stripe.checkout.sessions.create({
     //   payment_method_types: ["card"],
@@ -130,6 +146,8 @@ module.exports = {
 
     // console.log(session);
 
+    console.log({ promo, totalAmount, discount });
+
     //TODO Create Temp Order here
     const newOrder = await strapi.services.order.create({
       user: user.id,
@@ -139,7 +157,22 @@ module.exports = {
       userEmail: email,
       userPhone: phone,
       userName: name,
+      promo: promo.id,
     });
+
+    if (saveMe == "on") {
+      const newAddress = await strapi.services.address.create({
+        user: user.id,
+        line1: address.line1,
+        line2: address.line2,
+        city: address.city,
+        postal_code: address.postal_code,
+        state: address.state,
+        country: address.country,
+        email: email,
+        phone: phone,
+      });
+    }
 
     const paymentIntent = await stripe.paymentIntents.create({
       amount: fromDecimalToInt(totalAmount),
@@ -184,13 +217,28 @@ module.exports = {
    */
 
   async confirm(ctx) {
-    const { transactionId } = ctx.request.body;
+    const { transactionId, discount } = ctx.request.body;
 
     const paymentIntent = await stripe.paymentIntents.retrieve(transactionId);
 
     // console.log("verify session", paymentIntent.status);
 
     if (paymentIntent.status === "succeeded") {
+      if (discount) {
+        var tempPromo = await strapi.services.promo.findOne({
+          promoCode: discount.promoCode,
+        });
+
+        const redeemPromo = await strapi.services.promo.update(
+          {
+            id: tempPromo.id,
+          },
+          {
+            redeemed: true,
+          }
+        );
+      }
+
       //Update order
       const newOrder = await strapi.services.order.update(
         {

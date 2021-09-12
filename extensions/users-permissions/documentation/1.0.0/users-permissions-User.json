@@ -1301,6 +1301,9 @@
                 "userName": {
                   "type": "string"
                 },
+                "promo": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -1451,6 +1454,9 @@
                 "emailTo": {
                   "type": "string"
                 },
+                "order": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -1469,6 +1475,55 @@
           },
           "phone": {
             "type": "integer"
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "line1": {
+                  "type": "string"
+                },
+                "line2": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "postal_code": {
+                  "type": "string"
+                },
+                "state": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1536,6 +1591,12 @@
           },
           "phone": {
             "type": "integer"
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

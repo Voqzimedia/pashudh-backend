@@ -28,9 +28,9 @@
       "type": "decimal"
     },
     "user": {
-      "via": "orders",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "orders"
     },
     "Cart": {
       "type": "component",
@@ -56,6 +56,10 @@
     },
     "userName": {
       "type": "string"
+    },
+    "promo": {
+      "model": "promo",
+      "via": "order"
     }
   }
 }

@@ -325,6 +325,74 @@
         }
       }
     },
+    "/promos/validate/{code}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Promo"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
     "/promos/count": {
       "get": {
         "deprecated": false,
@@ -699,6 +767,12 @@
               "phone": {
                 "type": "integer"
               },
+              "addresses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -723,6 +797,67 @@
           },
           "emailTo": {
             "type": "string"
+          },
+          "order": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "paid",
+                  "unpaid",
+                  "processing",
+                  "completed",
+                  "refunded",
+                  "canceled",
+                  "hold"
+                ]
+              },
+              "total": {
+                "type": "number"
+              },
+              "user": {
+                "type": "string"
+              },
+              "Cart": {
+                "type": "component"
+              },
+              "address": {
+                "type": "string"
+              },
+              "transactionId": {
+                "type": "string"
+              },
+              "Shipping": {
+                "type": "component"
+              },
+              "userEmail": {
+                "type": "string"
+              },
+              "userPhone": {
+                "type": "integer"
+              },
+              "userName": {
+                "type": "string"
+              },
+              "promo": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -759,6 +894,9 @@
             "default": false
           },
           "emailTo": {
+            "type": "string"
+          },
+          "order": {
             "type": "string"
           },
           "published_at": {

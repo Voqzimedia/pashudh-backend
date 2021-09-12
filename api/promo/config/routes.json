@@ -18,6 +18,14 @@
     },
     {
       "method": "GET",
+      "path": "/promos/validate/:code",
+      "handler": "promo.validate",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/promos/count",
       "handler": "promo.count",
       "config": {

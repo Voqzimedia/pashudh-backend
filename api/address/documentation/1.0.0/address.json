@@ -1,77 +1,6 @@
 {
   "paths": {
-    "/orders/confirm": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Order"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/orders": {
+    "/addresses": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -83,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Order"
+                    "$ref": "#/components/schemas/Address"
                   }
                 }
               }
@@ -122,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Address"
         ],
         "parameters": [
           {
@@ -272,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Address"
                 }
               }
             }
@@ -310,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Address"
         ],
         "requestBody": {
           "description": "",
@@ -318,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder"
+                "$ref": "#/components/schemas/NewAddress"
               }
             }
           }
         }
       }
     },
-    "/orders/count": {
+    "/addresses/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -377,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Address"
         ],
         "parameters": []
       }
     },
-    "/orders/{id}": {
+    "/addresses/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -392,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Address"
                 }
               }
             }
@@ -430,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Address"
         ],
         "parameters": [
           {
@@ -454,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Order"
+                  "$ref": "#/components/schemas/Address"
                 }
               }
             }
@@ -492,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Address"
         ],
         "requestBody": {
           "description": "",
@@ -500,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder"
+                "$ref": "#/components/schemas/NewAddress"
               }
             }
           }
@@ -566,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Order"
+          "Address"
         ],
         "parameters": [
           {
@@ -585,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Order": {
+      "Address": {
         "required": [
           "id"
         ],
@@ -593,21 +522,23 @@
           "id": {
             "type": "string"
           },
-          "status": {
-            "type": "string",
-            "default": "unpaid",
-            "enum": [
-              "paid",
-              "unpaid",
-              "processing",
-              "completed",
-              "refunded",
-              "canceled",
-              "hold"
-            ]
+          "line1": {
+            "type": "string"
           },
-          "total": {
-            "type": "number"
+          "line2": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
           },
           "user": {
             "required": [
@@ -688,184 +619,11 @@
               }
             }
           },
-          "Cart": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "product": {
-                  "required": [
-                    "id",
-                    "StockDetails"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    },
-                    "image": {
-                      "type": "string"
-                    },
-                    "content": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "number"
-                    },
-                    "slug": {
-                      "type": "uid"
-                    },
-                    "SEO": {
-                      "type": "component"
-                    },
-                    "ProductDetails": {
-                      "type": "component"
-                    },
-                    "StockDetails": {
-                      "type": "component"
-                    },
-                    "categories": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "GalleryImgs": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "classes": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "colors": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "published_at": {
-                      "type": "string"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "quantity": {
-                  "type": "integer"
-                }
-              }
-            }
-          },
-          "address": {
+          "email": {
             "type": "string"
           },
-          "transactionId": {
+          "phone": {
             "type": "string"
-          },
-          "Shipping": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "trackingCode": {
-                "type": "string"
-              },
-              "shippingProvider": {
-                "type": "string",
-                "enum": [
-                  "FedEx",
-                  "DTDC",
-                  "ECOMExpress",
-                  "BlueDart",
-                  "Delhivery",
-                  "DHL",
-                  "IndiaPost",
-                  "FirstFlightCouriers",
-                  "GoJavas",
-                  "Shiprocket"
-                ]
-              },
-              "shippingInfo": {
-                "type": "string"
-              }
-            }
-          },
-          "userEmail": {
-            "type": "string"
-          },
-          "userPhone": {
-            "type": "integer"
-          },
-          "userName": {
-            "type": "string"
-          },
-          "promo": {
-            "required": [
-              "id",
-              "promoCode"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "promoCode": {
-                "type": "string"
-              },
-              "giftcard": {
-                "type": "string"
-              },
-              "user": {
-                "type": "string"
-              },
-              "promoPrice": {
-                "type": "number"
-              },
-              "transactionId": {
-                "type": "string"
-              },
-              "redeemed": {
-                "type": "boolean"
-              },
-              "paid": {
-                "type": "boolean"
-              },
-              "emailTo": {
-                "type": "string"
-              },
-              "order": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
           },
           "published_at": {
             "type": "string",
@@ -873,160 +631,33 @@
           }
         }
       },
-      "NewOrder": {
+      "NewAddress": {
         "properties": {
-          "status": {
-            "type": "string",
-            "default": "unpaid",
-            "enum": [
-              "paid",
-              "unpaid",
-              "processing",
-              "completed",
-              "refunded",
-              "canceled",
-              "hold"
-            ]
+          "line1": {
+            "type": "string"
           },
-          "total": {
-            "type": "number"
+          "line2": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
           },
           "user": {
             "type": "string"
           },
-          "Cart": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "product": {
-                  "required": [
-                    "id",
-                    "StockDetails"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    },
-                    "image": {
-                      "type": "string"
-                    },
-                    "content": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "number"
-                    },
-                    "slug": {
-                      "type": "uid"
-                    },
-                    "SEO": {
-                      "type": "component"
-                    },
-                    "ProductDetails": {
-                      "type": "component"
-                    },
-                    "StockDetails": {
-                      "type": "component"
-                    },
-                    "categories": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "GalleryImgs": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "classes": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "colors": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "published_at": {
-                      "type": "string"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "quantity": {
-                  "type": "integer"
-                }
-              }
-            }
-          },
-          "address": {
+          "email": {
             "type": "string"
           },
-          "transactionId": {
-            "type": "string"
-          },
-          "Shipping": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "trackingCode": {
-                "type": "string"
-              },
-              "shippingProvider": {
-                "type": "string",
-                "enum": [
-                  "FedEx",
-                  "DTDC",
-                  "ECOMExpress",
-                  "BlueDart",
-                  "Delhivery",
-                  "DHL",
-                  "IndiaPost",
-                  "FirstFlightCouriers",
-                  "GoJavas",
-                  "Shiprocket"
-                ]
-              },
-              "shippingInfo": {
-                "type": "string"
-              }
-            }
-          },
-          "userEmail": {
-            "type": "string"
-          },
-          "userPhone": {
-            "type": "integer"
-          },
-          "userName": {
-            "type": "string"
-          },
-          "promo": {
+          "phone": {
             "type": "string"
           },
           "published_at": {
@@ -1045,7 +676,7 @@
   },
   "tags": [
     {
-      "name": "Order"
+      "name": "Address"
     }
   ]
 }

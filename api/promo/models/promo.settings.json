@@ -42,6 +42,10 @@
     },
     "emailTo": {
       "type": "email"
+    },
+    "order": {
+      "via": "promo",
+      "model": "order"
     }
   }
 }
