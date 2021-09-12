@@ -51,15 +51,23 @@
     "userEmail": {
       "type": "email"
     },
-    "userPhone": {
-      "type": "biginteger"
-    },
     "userName": {
       "type": "string"
     },
     "promo": {
       "model": "promo",
       "via": "order"
+    },
+    "userPhone": {
+      "type": "string"
+    },
+    "paymentGateway": {
+      "type": "enumeration",
+      "enum": [
+        "Stripe",
+        "Razorpay"
+      ],
+      "required": false
     }
   }
 }

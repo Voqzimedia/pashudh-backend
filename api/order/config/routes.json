@@ -9,6 +9,14 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/orders/confirmRazerpay",
+      "handler": "order.confirmRazerpay",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/orders",
       "handler": "order.find",

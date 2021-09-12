@@ -3,6 +3,13 @@ const { sanitizeEntity } = require("strapi-utils");
 
 const stripe = require("stripe")(process.env.STRIPE_PK);
 
+const Razorpay = require("razorpay");
+
+var razorpayInstance = new Razorpay({
+  key_id: process.env.RAZORPAY_ID,
+  key_secret: process.env.RAZORPAY_SECRET,
+});
+
 const voucher_codes = require("voucher-code-generator");
 
 /**
@@ -71,7 +78,7 @@ module.exports = {
   async create(ctx) {
     const BASE_URL = ctx.request.headers.origin || "http://localhost:3000"; //So we can redirect back
 
-    const { giftcard, emailTo } = ctx.request.body;
+    const { giftcard, emailTo, paymentGateway } = ctx.request.body;
     const { user } = ctx.state; //From JWT
 
     // console.log({ giftcard, emailTo });
@@ -99,40 +106,72 @@ module.exports = {
     // console.log({ realGiftcard, promoCode });
 
     // //TODO Create Temp Promo here
-    const newPromo = await strapi.services.promo.create({
-      promoCode: promoCode[0],
-      giftcard: realGiftcard.id,
-      user: user.id,
-      promoPrice: realGiftcard.price,
-      emailTo: emailTo ? emailTo : user.email,
-    });
 
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: fromDecimalToInt(realGiftcard.price),
-      currency: "inr",
-      metadata: {
-        Customer_Name: user.username,
-        Customer_Email: user.email,
-        User_Phone: user.phone,
-        Site_Url: BASE_URL,
-        Order_Id: `Promo Id #${newPromo.id}`,
-      },
-      receipt_email: user.email,
-      description: `Pashudh PromoId #${newPromo.id}`,
-    });
+    if (paymentGateway == "Stripe") {
+      const newPromo = await strapi.services.promo.create({
+        promoCode: promoCode[0],
+        giftcard: realGiftcard.id,
+        user: user.id,
+        promoPrice: realGiftcard.price,
+        emailTo: emailTo ? emailTo : user.email,
+      });
 
-    const updatePromo = await strapi.services.promo.update(
-      {
-        id: newPromo.id,
-      },
-      {
-        transactionId: paymentIntent.id,
-      }
-    );
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: fromDecimalToInt(realGiftcard.price),
+        currency: "inr",
+        metadata: {
+          Customer_Name: user.username,
+          Customer_Email: user.email,
+          User_Phone: user.phone,
+          Site_Url: BASE_URL,
+          Order_Id: `Promo Id #${newPromo.id}`,
+        },
+        receipt_email: user.email,
+        description: `Pashudh PromoId #${newPromo.id}`,
+      });
 
-    return {
-      client_secret: paymentIntent.client_secret,
-    };
+      const updatePromo = await strapi.services.promo.update(
+        {
+          id: newPromo.id,
+        },
+        {
+          transactionId: paymentIntent.id,
+        }
+      );
+
+      return {
+        client_secret: paymentIntent.client_secret,
+      };
+    } else {
+      const newPromo = await strapi.services.promo.create({
+        promoCode: promoCode[0],
+        giftcard: realGiftcard.id,
+        user: user.id,
+        promoPrice: realGiftcard.price,
+        emailTo: emailTo ? emailTo : user.email,
+      });
+
+      var options = {
+        amount: fromDecimalToInt(realGiftcard.price), // amount in the smallest currency unit
+        currency: "INR",
+        receipt: `Pashudh PromoId #${newPromo.id}`,
+      };
+
+      var order = await razorpayInstance.orders.create(options);
+
+      const updatePromo = await strapi.services.promo.update(
+        {
+          id: newPromo.id,
+        },
+        {
+          transactionId: order.id,
+        }
+      );
+
+      return {
+        order,
+      };
+    }
   },
 
   async validate(ctx) {
@@ -185,6 +224,49 @@ module.exports = {
         }
       );
       return sanitizeEntity(updatePromo, { model: strapi.models.promo });
+    } else {
+      ctx.throw(
+        400,
+        "It seems like the promo wasn't verified, please contact support"
+      );
+    }
+
+    return { status: true };
+  },
+  /**
+   * Payment Confirm for the order
+   * @param {*} ctx
+   * @returns
+   */
+
+  async confirmRazerpay(ctx) {
+    const { transaction } = ctx.request.body;
+
+    // const paymentIntent = await stripe.paymentIntents.retrieve(transactionId);
+
+    // console.log("verify session", paymentIntent.status);
+
+    var thisPromo = await strapi.services.promo.findOne({
+      transactionId: transaction.razorpay_order_id,
+    });
+
+    if (thisPromo) {
+      //Update order
+      const updatePromo = await strapi.services.promo.update(
+        {
+          transactionId: transaction.razorpay_order_id,
+        },
+        {
+          paid: true,
+          transactionId: transaction.razorpay_payment_id,
+        }
+      );
+
+      const updatedPromo = await strapi.services.promo.findOne({
+        transactionId: transaction.razorpay_payment_id,
+      });
+
+      return sanitizeEntity(updatedPromo, { model: strapi.models.promo });
     } else {
       ctx.throw(
         400,

@@ -2,6 +2,12 @@
 const { sanitizeEntity } = require("strapi-utils");
 
 const stripe = require("stripe")(process.env.STRIPE_PK);
+const Razorpay = require("razorpay");
+
+var razorpayInstance = new Razorpay({
+  key_id: process.env.RAZORPAY_ID,
+  key_secret: process.env.RAZORPAY_SECRET,
+});
 
 /**
  * Given a dollar amount number, convert it to it's value in cents
@@ -69,14 +75,22 @@ module.exports = {
   async create(ctx) {
     const BASE_URL = ctx.request.headers.origin || "http://localhost:3000"; //So we can redirect back
 
-    const { cartItems, address, name, email, phone, saveMe, discount } =
-      ctx.request.body;
+    const {
+      cartItems,
+      address,
+      name,
+      email,
+      phone,
+      saveMe,
+      discount,
+      paymentGateway,
+    } = ctx.request.body;
 
     if (!cartItems) {
       return res.status(400).send({ error: "Please add a cart items to body" });
     }
 
-    // console.log({ saveMe, discount });
+    // console.log({ paymentGateway });
 
     var i;
 
@@ -146,19 +160,9 @@ module.exports = {
 
     // console.log(session);
 
-    console.log({ promo, totalAmount, discount });
+    // console.log({ promo, totalAmount, discount });
 
     //TODO Create Temp Order here
-    const newOrder = await strapi.services.order.create({
-      user: user.id,
-      total: totalAmount,
-      Cart: cartArray,
-      address: addressTxt,
-      userEmail: email,
-      userPhone: phone,
-      userName: name,
-      promo: promo.id,
-    });
 
     if (saveMe == "on") {
       const newAddress = await strapi.services.address.create({
@@ -174,40 +178,89 @@ module.exports = {
       });
     }
 
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: fromDecimalToInt(totalAmount),
-      currency: "inr",
-      metadata: {
-        Customer_Name: name,
-        Customer_Email: email,
-        User_Phone: phone,
-        Site_Url: BASE_URL,
-        Order_Id: `OrderId #${newOrder.id}`,
-      },
-      receipt_email: email,
-      description: `Pashudh OrderId #${newOrder.id}`,
-    });
+    if (paymentGateway == "Stripe") {
+      const newOrder = await strapi.services.order.create({
+        user: user.id,
+        total: totalAmount,
+        Cart: cartArray,
+        address: addressTxt,
+        userEmail: email,
+        userPhone: phone,
+        userName: name,
+        promo: promo.id,
+        paymentGateway: paymentGateway,
+      });
 
-    const updateOrder = await strapi.services.order.update(
-      {
-        id: newOrder.id,
-      },
-      {
-        transactionId: paymentIntent.id,
-      }
-    );
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: fromDecimalToInt(totalAmount),
+        currency: "inr",
+        metadata: {
+          Customer_Name: name,
+          Customer_Email: email,
+          User_Phone: phone,
+          Site_Url: BASE_URL,
+          Order_Id: `OrderId #${newOrder.id}`,
+        },
+        receipt_email: email,
+        description: `Pashudh OrderId #${newOrder.id}`,
+      });
+
+      const updateOrder = await strapi.services.order.update(
+        {
+          id: newOrder.id,
+        },
+        {
+          transactionId: paymentIntent.id,
+        }
+      );
+
+      return {
+        client_secret: paymentIntent.client_secret,
+      };
+    } else {
+      // console.log(razorpayInstance);
+
+      const newOrder = await strapi.services.order.create({
+        user: user.id,
+        total: totalAmount,
+        Cart: cartArray,
+        address: addressTxt,
+        userEmail: email,
+        userPhone: phone,
+        userName: name,
+        promo: promo.id,
+        paymentGateway: paymentGateway,
+      });
+
+      var options = {
+        amount: fromDecimalToInt(totalAmount), // amount in the smallest currency unit
+        currency: "INR",
+        receipt: `Pashudh OrderId #${newOrder.id}`,
+      };
+
+      var order = await razorpayInstance.orders.create(options);
+
+      // console.log(order);
+
+      const updateOrder = await strapi.services.order.update(
+        {
+          id: newOrder.id,
+        },
+        {
+          transactionId: order.id,
+        }
+      );
+
+      return {
+        order,
+      };
+    }
 
     // console.log(newOrder);
-
-    return {
-      client_secret: paymentIntent.client_secret,
-    };
 
     // return {
     //   session: session,
     // };
-
-    // return { status: true };
   },
 
   /**
@@ -248,6 +301,34 @@ module.exports = {
           status: "paid",
         }
       );
+
+      if (newOrder) {
+        try {
+          await strapi.plugins[
+            "email-designer"
+          ].services.email.sendTemplatedEmail(
+            {
+              to: newOrder.userEmail, // required
+            },
+            {
+              templateId: 1, // required - you can get the template id from the admin panel (can change on import)
+              sourceCodeToTemplateId: 55, // ID that can be defined in the template designer (won't change on import)
+            },
+            {
+              // this object must include all variables you're using in your email template
+              order: {
+                cart: newOrder.Cart,
+                id: newOrder.id,
+                total: newOrder.total,
+              },
+            }
+          );
+        } catch (err) {
+          strapi.log.debug("📺: ", err);
+          return ctx.badRequest(null, err);
+        }
+      }
+
       return sanitizeEntity(newOrder, { model: strapi.models.order });
     } else {
       ctx.throw(
@@ -255,5 +336,95 @@ module.exports = {
         "It seems like the order wasn't verified, please contact support"
       );
     }
+  },
+
+  /**
+   * Payment Confirm for the order
+   * @param {*} ctx
+   * @returns
+   */
+
+  async confirmRazerpay(ctx) {
+    const { transaction, discount } = ctx.request.body;
+
+    // const paymentIntent = await stripe.paymentIntents.retrieve(transactionId);
+
+    var thisOrder = await strapi.services.order.findOne({
+      transactionId: transaction.razorpay_order_id,
+    });
+
+    // console.log({ transaction, thisOrder });
+
+    if (thisOrder) {
+      if (discount) {
+        var tempPromo = await strapi.services.promo.findOne({
+          promoCode: discount.promoCode,
+        });
+
+        const redeemPromo = await strapi.services.promo.update(
+          {
+            id: tempPromo.id,
+          },
+          {
+            redeemed: true,
+          }
+        );
+      }
+
+      //Update order
+      const newOrder = await strapi.services.order.update(
+        {
+          transactionId: transaction.razorpay_order_id,
+        },
+        {
+          status: "paid",
+          transactionId: transaction.razorpay_payment_id,
+        }
+      );
+
+      const updatedOrder = await strapi.services.order.findOne({
+        transactionId: transaction.razorpay_payment_id,
+      });
+
+      // console.log(updatedOrder);
+
+      if (updatedOrder) {
+        try {
+          await strapi.plugins[
+            "email-designer"
+          ].services.email.sendTemplatedEmail(
+            {
+              to: updatedOrder.userEmail, // required
+            },
+            {
+              templateId: 1, // required - you can get the template id from the admin panel (can change on import)
+              sourceCodeToTemplateId: 55, // ID that can be defined in the template designer (won't change on import)
+            },
+            {
+              // this object must include all variables you're using in your email template
+              order: {
+                cart: updatedOrder.Cart,
+                id: updatedOrder.id,
+                total: updatedOrder.total,
+              },
+            }
+          );
+        } catch (err) {
+          strapi.log.debug("📺: ", err);
+          return ctx.badRequest(null, err);
+        }
+      }
+
+      return sanitizeEntity(updatedOrder, { model: strapi.models.order });
+    } else {
+      ctx.throw(
+        400,
+        "It seems like the order wasn't verified, please contact support"
+      );
+    }
+
+    // return {
+    //   status: true,
+    // };
   },
 };

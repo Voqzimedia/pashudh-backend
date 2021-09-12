@@ -1188,8 +1188,7 @@
         "required": [
           "id",
           "username",
-          "email",
-          "phone"
+          "email"
         ],
         "properties": {
           "id": {
@@ -1295,14 +1294,21 @@
                 "userEmail": {
                   "type": "string"
                 },
-                "userPhone": {
-                  "type": "integer"
-                },
                 "userName": {
                   "type": "string"
                 },
                 "promo": {
                   "type": "string"
+                },
+                "userPhone": {
+                  "type": "string"
+                },
+                "paymentGateway": {
+                  "type": "string",
+                  "enum": [
+                    "Stripe",
+                    "Razorpay"
+                  ]
                 },
                 "published_at": {
                   "type": "string"
@@ -1473,9 +1479,6 @@
             "type": "integer",
             "default": 50000
           },
-          "phone": {
-            "type": "integer"
-          },
           "addresses": {
             "type": "array",
             "items": {
@@ -1524,14 +1527,16 @@
                 }
               }
             }
+          },
+          "phone": {
+            "type": "string"
           }
         }
       },
       "NewUsersPermissionsUser": {
         "required": [
           "username",
-          "email",
-          "phone"
+          "email"
         ],
         "properties": {
           "username": {
@@ -1589,14 +1594,14 @@
             "type": "integer",
             "default": 50000
           },
-          "phone": {
-            "type": "integer"
-          },
           "addresses": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "phone": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

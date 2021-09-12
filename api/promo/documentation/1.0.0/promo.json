@@ -71,6 +71,77 @@
         }
       }
     },
+    "/promos/confirmRazerpay": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Promo"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/promos": {
       "get": {
         "deprecated": false,
@@ -706,8 +777,7 @@
             "required": [
               "id",
               "username",
-              "email",
-              "phone"
+              "email"
             ],
             "properties": {
               "id": {
@@ -764,14 +834,14 @@
               "redeemPoints": {
                 "type": "integer"
               },
-              "phone": {
-                "type": "integer"
-              },
               "addresses": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
+              },
+              "phone": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -839,14 +909,21 @@
               "userEmail": {
                 "type": "string"
               },
-              "userPhone": {
-                "type": "integer"
-              },
               "userName": {
                 "type": "string"
               },
               "promo": {
                 "type": "string"
+              },
+              "userPhone": {
+                "type": "string"
+              },
+              "paymentGateway": {
+                "type": "string",
+                "enum": [
+                  "Stripe",
+                  "Razorpay"
+                ]
               },
               "published_at": {
                 "type": "string"

@@ -9,6 +9,14 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/promos/confirmRazerpay",
+      "handler": "promo.confirmRazerpay",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/promos",
       "handler": "promo.find",

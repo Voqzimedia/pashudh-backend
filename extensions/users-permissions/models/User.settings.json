@@ -87,14 +87,12 @@
       "required": false,
       "min": 50000
     },
-    "phone": {
-      "type": "biginteger",
-      "required": true,
-      "unique": true
-    },
     "addresses": {
-      "via": "user",
-      "collection": "address"
+      "collection": "address",
+      "via": "user"
+    },
+    "phone": {
+      "type": "string"
     }
   }
 }
