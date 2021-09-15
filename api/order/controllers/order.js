@@ -84,13 +84,14 @@ module.exports = {
       saveMe,
       discount,
       paymentGateway,
+      useRedeemPoints,
     } = ctx.request.body;
 
     if (!cartItems) {
       return res.status(400).send({ error: "Please add a cart items to body" });
     }
 
-    // console.log({ paymentGateway });
+    // console.log({ useRedeemPoints });
 
     var i;
 
@@ -148,6 +149,10 @@ module.exports = {
       totalAmount = totalAmount - promo.promoPrice;
     }
 
+    if (useRedeemPoints) {
+      totalAmount = totalAmount - user.redeemPoints / 10;
+    }
+
     // const session = await stripe.checkout.sessions.create({
     //   payment_method_types: ["card"],
     //   line_items: line_items,
@@ -160,7 +165,7 @@ module.exports = {
 
     // console.log(session);
 
-    // console.log({ promo, totalAmount, discount });
+    // console.log({ totalAmount });
 
     //TODO Create Temp Order here
 
@@ -259,7 +264,7 @@ module.exports = {
     // console.log(newOrder);
 
     // return {
-    //   session: session,
+    //   status: true,
     // };
   },
 
@@ -270,9 +275,11 @@ module.exports = {
    */
 
   async confirm(ctx) {
-    const { transactionId, discount } = ctx.request.body;
+    const { transactionId, discount, useRedeemPoints } = ctx.request.body;
 
     const paymentIntent = await stripe.paymentIntents.retrieve(transactionId);
+
+    const { user } = ctx.state; //From JWT
 
     // console.log("verify session", paymentIntent.status);
 
@@ -303,6 +310,26 @@ module.exports = {
       );
 
       if (newOrder) {
+        if (user) {
+          if (useRedeemPoints) {
+            const updateRedeem = await strapi.plugins[
+              "users-permissions"
+            ].services.user.edit(
+              { id: user.id },
+              { redeemPoints: newOrder.total }
+            );
+          } else {
+            const updateRedeem = await strapi.plugins[
+              "users-permissions"
+            ].services.user.edit(
+              { id: user.id },
+              { redeemPoints: user.redeemPoints + newOrder.total }
+            );
+          }
+
+          // console.log(updateRedeem);
+        }
+
         try {
           await strapi.plugins[
             "email-designer"
@@ -353,6 +380,8 @@ module.exports = {
       transactionId: transaction.razorpay_order_id,
     });
 
+    const { user } = ctx.state; //From JWT
+
     // console.log({ transaction, thisOrder });
 
     if (thisOrder) {
@@ -389,6 +418,26 @@ module.exports = {
       // console.log(updatedOrder);
 
       if (updatedOrder) {
+        if (user) {
+          if (useRedeemPoints) {
+            const updateRedeem = await strapi.plugins[
+              "users-permissions"
+            ].services.user.edit(
+              { id: user.id },
+              { redeemPoints: newOrder.total }
+            );
+          } else {
+            const updateRedeem = await strapi.plugins[
+              "users-permissions"
+            ].services.user.edit(
+              { id: user.id },
+              { redeemPoints: user.redeemPoints + newOrder.total }
+            );
+          }
+
+          // console.log(updateRedeem);
+        }
+
         try {
           await strapi.plugins[
             "email-designer"

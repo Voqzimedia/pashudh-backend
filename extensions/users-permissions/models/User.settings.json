@@ -60,8 +60,8 @@
       "configurable": false
     },
     "orders": {
-      "via": "user",
-      "collection": "order"
+      "collection": "order",
+      "via": "user"
     },
     "Testimonials": {
       "collection": "testimonial",
@@ -84,8 +84,7 @@
     "redeemPoints": {
       "type": "integer",
       "default": 50000,
-      "required": false,
-      "min": 50000
+      "required": false
     },
     "addresses": {
       "collection": "address",
