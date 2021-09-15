@@ -569,6 +569,9 @@
                 "emailTo": {
                   "type": "string"
                 },
+                "order": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },

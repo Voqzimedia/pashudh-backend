@@ -32,6 +32,9 @@
     },
     "description": {
       "type": "string"
+    },
+    "priority": {
+      "type": "integer"
     }
   }
 }

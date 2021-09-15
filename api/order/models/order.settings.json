@@ -28,9 +28,9 @@
       "type": "decimal"
     },
     "user": {
+      "via": "orders",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "orders"
+      "model": "user"
     },
     "Cart": {
       "type": "component",
@@ -51,11 +51,23 @@
     "userEmail": {
       "type": "email"
     },
-    "userPhone": {
-      "type": "biginteger"
-    },
     "userName": {
       "type": "string"
+    },
+    "promo": {
+      "model": "promo",
+      "via": "order"
+    },
+    "userPhone": {
+      "type": "string"
+    },
+    "paymentGateway": {
+      "type": "enumeration",
+      "enum": [
+        "Stripe",
+        "Razorpay"
+      ],
+      "required": false
     }
   }
 }

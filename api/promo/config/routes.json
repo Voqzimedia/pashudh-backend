@@ -9,9 +9,25 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/promos/confirmRazerpay",
+      "handler": "promo.confirmRazerpay",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/promos",
       "handler": "promo.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/promos/validate/:code",
+      "handler": "promo.validate",
       "config": {
         "policies": []
       }

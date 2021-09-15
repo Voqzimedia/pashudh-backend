@@ -531,8 +531,7 @@
             "required": [
               "id",
               "username",
-              "email",
-              "phone"
+              "email"
             ],
             "properties": {
               "id": {
@@ -589,8 +588,14 @@
               "redeemPoints": {
                 "type": "integer"
               },
+              "addresses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "phone": {
-                "type": "integer"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
