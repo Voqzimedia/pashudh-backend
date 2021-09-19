@@ -17,8 +17,8 @@
       "unique": true
     },
     "giftcard": {
-      "model": "giftcard",
-      "via": "promos"
+      "via": "promos",
+      "model": "giftcard"
     },
     "user": {
       "via": "promos",
