@@ -19,8 +19,8 @@
       "targetField": "title"
     },
     "products": {
-      "collection": "product",
       "via": "categories",
+      "collection": "product",
       "dominant": true
     },
     "subTitle": {

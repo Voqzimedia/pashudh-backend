@@ -826,6 +826,9 @@
                         "type": "string"
                       }
                     },
+                    "gallery": {
+                      "type": "component"
+                    },
                     "published_at": {
                       "type": "string"
                     },
@@ -1038,6 +1041,9 @@
                       "items": {
                         "type": "string"
                       }
+                    },
+                    "gallery": {
+                      "type": "component"
                     },
                     "published_at": {
                       "type": "string"

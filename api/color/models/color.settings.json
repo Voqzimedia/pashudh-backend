@@ -19,8 +19,8 @@
       "targetField": "name"
     },
     "products": {
-      "collection": "product",
       "via": "colors",
+      "collection": "product",
       "dominant": true
     }
   }

@@ -21,7 +21,8 @@
         "images"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "content": {
       "type": "richtext"
@@ -50,8 +51,8 @@
       "required": true
     },
     "categories": {
-      "via": "products",
-      "collection": "category"
+      "collection": "category",
+      "via": "products"
     },
     "GalleryImgs": {
       "collection": "file",
@@ -61,15 +62,21 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "classes": {
-      "via": "products",
-      "collection": "class"
+      "collection": "class",
+      "via": "products"
     },
     "colors": {
-      "via": "products",
-      "collection": "color"
+      "collection": "color",
+      "via": "products"
+    },
+    "gallery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product.image-gallery"
     }
   }
 }

@@ -587,6 +587,9 @@
                     "type": "string"
                   }
                 },
+                "gallery": {
+                  "type": "component"
+                },
                 "published_at": {
                   "type": "string"
                 },

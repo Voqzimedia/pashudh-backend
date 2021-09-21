@@ -18,8 +18,8 @@
       "type": "uid"
     },
     "products": {
-      "collection": "product",
       "via": "classes",
+      "collection": "product",
       "dominant": true
     }
   }
