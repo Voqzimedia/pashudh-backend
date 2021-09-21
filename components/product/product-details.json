@@ -30,10 +30,10 @@
     "Fabric": {
       "type": "string"
     },
-    "Weight": {
-      "type": "decimal"
-    },
     "BlousePiece": {
+      "type": "string"
+    },
+    "Weight": {
       "type": "string"
     }
   }

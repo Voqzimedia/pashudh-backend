@@ -649,10 +649,10 @@
               "Fabric": {
                 "type": "string"
               },
-              "Weight": {
-                "type": "number"
-              },
               "BlousePiece": {
+                "type": "string"
+              },
+              "Weight": {
                 "type": "string"
               }
             }
@@ -1213,10 +1213,10 @@
               "Fabric": {
                 "type": "string"
               },
-              "Weight": {
-                "type": "number"
-              },
               "BlousePiece": {
+                "type": "string"
+              },
+              "Weight": {
                 "type": "string"
               }
             }
