@@ -17,20 +17,20 @@
       "unique": true
     },
     "giftcard": {
-      "via": "promos",
-      "model": "giftcard"
+      "model": "giftcard",
+      "via": "promos"
     },
     "user": {
-      "via": "promos",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "promos"
     },
     "promoPrice": {
       "type": "decimal"
     },
     "transactionId": {
       "type": "string",
-      "unique": true
+      "unique": false
     },
     "redeemed": {
       "type": "boolean",
@@ -44,8 +44,8 @@
       "type": "email"
     },
     "order": {
-      "via": "promo",
-      "model": "order"
+      "model": "order",
+      "via": "promo"
     }
   }
 }

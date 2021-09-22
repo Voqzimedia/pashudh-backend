@@ -86,92 +86,114 @@ module.exports = {
     if (!giftcard) {
       return res.status(400).send({ error: "Please add a giftcard to body" });
     }
+    var i;
 
-    const realGiftcard = await strapi.services.giftcard.findOne({
-      slug: giftcard,
-    });
+    var totalAmount = 0;
 
-    if (!realGiftcard) {
-      return res.status(400).send({ error: "Giftcard is not found" });
+    var newPromos = [];
+    var newPromoIds = "";
+
+    for (i = 0; i < giftcard.length; i++) {
+      const realGiftcard = await strapi.services.giftcard.findOne({
+        slug: giftcard[i].slug,
+      });
+      if (realGiftcard) {
+        totalAmount = totalAmount + realGiftcard.price;
+
+        const today = await getToday();
+
+        const promoCode = voucher_codes.generate({
+          length: 6,
+          prefix: "pashudh-",
+          postfix: `-${today}`,
+        });
+
+        const newPromo = await strapi.services.promo.create({
+          promoCode: promoCode[0],
+          giftcard: realGiftcard.id,
+          user: user.id,
+          promoPrice: realGiftcard.price,
+          emailTo: emailTo ? emailTo : user.email,
+        });
+
+        newPromoIds = newPromoIds + `#${newPromo.id},`;
+
+        newPromos.push(newPromo);
+      }
+
+      if (!realGiftcard) {
+        return res.status(400).send({ error: "Giftcard is not found" });
+      }
     }
 
-    const today = await getToday();
+    // console.log(totalAmount);
 
-    const promoCode = voucher_codes.generate({
-      length: 6,
-      prefix: "pashudh-",
-      postfix: `-${today}`,
-    });
+    // console.log({ newPromos, totalAmount });
 
     // console.log({ realGiftcard, promoCode });
 
     // //TODO Create Temp Promo here
 
     if (paymentGateway == "Stripe") {
-      const newPromo = await strapi.services.promo.create({
-        promoCode: promoCode[0],
-        giftcard: realGiftcard.id,
-        user: user.id,
-        promoPrice: realGiftcard.price,
-        emailTo: emailTo ? emailTo : user.email,
-      });
-
       const paymentIntent = await stripe.paymentIntents.create({
-        amount: fromDecimalToInt(realGiftcard.price),
+        amount: fromDecimalToInt(totalAmount),
         currency: "inr",
         metadata: {
           Customer_Name: user.username,
           Customer_Email: user.email,
           User_Phone: user.phone,
           Site_Url: BASE_URL,
-          Order_Id: `Promo Id #${newPromo.id}`,
+          Order_Id: `Promo Id ${newPromoIds}`,
         },
         receipt_email: user.email,
-        description: `Pashudh PromoId #${newPromo.id}`,
+        description: `Pashudh PromoId #${newPromoIds}`,
       });
 
-      const updatePromo = await strapi.services.promo.update(
-        {
-          id: newPromo.id,
-        },
-        {
-          transactionId: paymentIntent.id,
-        }
-      );
+      for (i = 0; i < newPromos.length; i++) {
+        // console.log(newPromos[i].id);
+        const updatePromo = await strapi.services.promo.update(
+          {
+            id: newPromos[i].id,
+          },
+          {
+            transactionId: paymentIntent.id,
+          }
+        );
+
+        // console.log(updatePromo);
+      }
 
       return {
         client_secret: paymentIntent.client_secret,
       };
     } else {
-      const newPromo = await strapi.services.promo.create({
-        promoCode: promoCode[0],
-        giftcard: realGiftcard.id,
-        user: user.id,
-        promoPrice: realGiftcard.price,
-        emailTo: emailTo ? emailTo : user.email,
-      });
-
       var options = {
-        amount: fromDecimalToInt(realGiftcard.price), // amount in the smallest currency unit
+        amount: fromDecimalToInt(totalAmount), // amount in the smallest currency unit
         currency: "INR",
-        receipt: `Pashudh PromoId #${newPromo.id}`,
+        receipt: `Pashudh PromoId ${newPromoIds}`,
       };
 
       var order = await razorpayInstance.orders.create(options);
 
-      const updatePromo = await strapi.services.promo.update(
-        {
-          id: newPromo.id,
-        },
-        {
-          transactionId: order.id,
-        }
-      );
+      for (i = 0; i < newPromos.length; i++) {
+        const updatePromo = await strapi.services.promo.update(
+          {
+            id: newPromos[i].id,
+          },
+          {
+            transactionId: order.id,
+          }
+        );
+      }
 
       return {
         order,
       };
     }
+
+    // return {
+    //   data: true,
+    // };
   },
 
   async validate(ctx) {

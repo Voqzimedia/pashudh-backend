@@ -78,8 +78,8 @@
       "pluginOptions": {}
     },
     "promos": {
-      "collection": "promo",
-      "via": "user"
+      "via": "user",
+      "collection": "promo"
     },
     "redeemPoints": {
       "type": "integer",

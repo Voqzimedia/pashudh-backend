@@ -25,8 +25,8 @@
       "type": "text"
     },
     "promos": {
-      "collection": "promo",
-      "via": "giftcard"
+      "via": "giftcard",
+      "collection": "promo"
     },
     "img": {
       "model": "file",

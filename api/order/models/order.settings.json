@@ -55,8 +55,8 @@
       "type": "string"
     },
     "promo": {
-      "model": "promo",
-      "via": "order"
+      "via": "order",
+      "model": "promo"
     },
     "userPhone": {
       "type": "string"
