@@ -19,8 +19,8 @@
       "targetField": "title"
     },
     "products": {
-      "via": "categories",
       "collection": "product",
+      "via": "categories",
       "dominant": true
     },
     "subTitle": {
@@ -35,6 +35,18 @@
     },
     "priority": {
       "type": "integer"
+    },
+    "img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }
