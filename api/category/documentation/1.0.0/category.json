@@ -590,6 +590,9 @@
                 "gallery": {
                   "type": "component"
                 },
+                "isSoldOut": {
+                  "type": "boolean"
+                },
                 "published_at": {
                   "type": "string"
                 },

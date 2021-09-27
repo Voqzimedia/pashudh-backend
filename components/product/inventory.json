@@ -15,11 +15,6 @@
     "Stock": {
       "type": "biginteger",
       "required": true
-    },
-    "isSoldOut": {
-      "type": "boolean",
-      "default": false,
-      "required": false
     }
   }
 }

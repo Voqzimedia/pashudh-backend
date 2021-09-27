@@ -192,8 +192,7 @@ module.exports = {
     const tempData = {
       promoCode: entity.promoCode,
       price: entity.promoPrice,
-      isValid: !entity.redeemed,
-      giftcard: entity.giftcard.name,
+      isValid: !entity.redeemed && entity.paid,
       id: entity.id,
     };
 

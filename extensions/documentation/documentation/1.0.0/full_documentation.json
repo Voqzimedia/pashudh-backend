@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/21/2021 4:32:47 PM"
+    "x-generation-date": "09/27/2021 5:32:32 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -95,9 +95,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Address"
-        ],
+        "tags": ["Address"],
         "parameters": [
           {
             "name": "_limit",
@@ -283,9 +281,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Address"
-        ],
+        "tags": ["Address"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -350,9 +346,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Address"
-        ],
+        "tags": ["Address"],
         "parameters": []
       }
     },
@@ -403,9 +397,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Address"
-        ],
+        "tags": ["Address"],
         "parameters": [
           {
             "name": "id",
@@ -465,9 +457,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Address"
-        ],
+        "tags": ["Address"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -539,9 +529,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Address"
-        ],
+        "tags": ["Address"],
         "parameters": [
           {
             "name": "id",
@@ -606,9 +594,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Category"
-        ],
+        "tags": ["Category"],
         "parameters": [
           {
             "name": "_limit",
@@ -794,9 +780,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Category"
-        ],
+        "tags": ["Category"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -861,9 +845,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Category"
-        ],
+        "tags": ["Category"],
         "parameters": []
       }
     },
@@ -914,9 +896,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Category"
-        ],
+        "tags": ["Category"],
         "parameters": [
           {
             "name": "id",
@@ -976,9 +956,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Category"
-        ],
+        "tags": ["Category"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1050,9 +1028,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Category"
-        ],
+        "tags": ["Category"],
         "parameters": [
           {
             "name": "id",
@@ -1117,9 +1093,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Class"
-        ],
+        "tags": ["Class"],
         "parameters": [
           {
             "name": "_limit",
@@ -1305,9 +1279,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Class"
-        ],
+        "tags": ["Class"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1372,9 +1344,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Class"
-        ],
+        "tags": ["Class"],
         "parameters": []
       }
     },
@@ -1425,9 +1395,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Class"
-        ],
+        "tags": ["Class"],
         "parameters": [
           {
             "name": "id",
@@ -1487,9 +1455,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Class"
-        ],
+        "tags": ["Class"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1561,9 +1527,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Class"
-        ],
+        "tags": ["Class"],
         "parameters": [
           {
             "name": "id",
@@ -1628,9 +1592,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Color"
-        ],
+        "tags": ["Color"],
         "parameters": [
           {
             "name": "_limit",
@@ -1816,9 +1778,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Color"
-        ],
+        "tags": ["Color"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1883,9 +1843,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Color"
-        ],
+        "tags": ["Color"],
         "parameters": []
       }
     },
@@ -1936,9 +1894,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Color"
-        ],
+        "tags": ["Color"],
         "parameters": [
           {
             "name": "id",
@@ -1998,9 +1954,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Color"
-        ],
+        "tags": ["Color"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2072,9 +2026,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Color"
-        ],
+        "tags": ["Color"],
         "parameters": [
           {
             "name": "id",
@@ -2139,9 +2091,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Giftcard"
-        ],
+        "tags": ["Giftcard"],
         "parameters": [
           {
             "name": "_limit",
@@ -2327,9 +2277,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Giftcard"
-        ],
+        "tags": ["Giftcard"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2394,9 +2342,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Giftcard"
-        ],
+        "tags": ["Giftcard"],
         "parameters": []
       }
     },
@@ -2447,9 +2393,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Giftcard"
-        ],
+        "tags": ["Giftcard"],
         "parameters": [
           {
             "name": "id",
@@ -2509,9 +2453,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Giftcard"
-        ],
+        "tags": ["Giftcard"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2583,9 +2525,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Giftcard"
-        ],
+        "tags": ["Giftcard"],
         "parameters": [
           {
             "name": "id",
@@ -2650,9 +2590,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Internationalization"
-        ],
+        "tags": ["Internationalization"],
         "parameters": [
           {
             "name": "_limit",
@@ -2838,9 +2776,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Internationalization"
-        ],
+        "tags": ["Internationalization"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2901,9 +2837,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Internationalization"
-        ],
+        "tags": ["Internationalization"],
         "parameters": []
       }
     },
@@ -2958,9 +2892,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Order"
-        ],
+        "tags": ["Order"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3029,9 +2961,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Order"
-        ],
+        "tags": ["Order"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3099,9 +3029,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Order"
-        ],
+        "tags": ["Order"],
         "parameters": [
           {
             "name": "_limit",
@@ -3287,9 +3215,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Order"
-        ],
+        "tags": ["Order"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3354,9 +3280,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Order"
-        ],
+        "tags": ["Order"],
         "parameters": []
       }
     },
@@ -3407,9 +3331,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Order"
-        ],
+        "tags": ["Order"],
         "parameters": [
           {
             "name": "id",
@@ -3469,9 +3391,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Order"
-        ],
+        "tags": ["Order"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3543,9 +3463,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Order"
-        ],
+        "tags": ["Order"],
         "parameters": [
           {
             "name": "id",
@@ -3610,9 +3528,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Product"
-        ],
+        "tags": ["Product"],
         "parameters": [
           {
             "name": "_limit",
@@ -3798,9 +3714,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Product"
-        ],
+        "tags": ["Product"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3865,9 +3779,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Product"
-        ],
+        "tags": ["Product"],
         "parameters": []
       }
     },
@@ -3918,9 +3830,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Product"
-        ],
+        "tags": ["Product"],
         "parameters": [
           {
             "name": "id",
@@ -3980,9 +3890,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Product"
-        ],
+        "tags": ["Product"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4054,9 +3962,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Product"
-        ],
+        "tags": ["Product"],
         "parameters": [
           {
             "name": "id",
@@ -4122,9 +4028,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Promo"
-        ],
+        "tags": ["Promo"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4193,9 +4097,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Promo"
-        ],
+        "tags": ["Promo"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4263,9 +4165,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Promo"
-        ],
+        "tags": ["Promo"],
         "parameters": [
           {
             "name": "_limit",
@@ -4451,9 +4351,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Promo"
-        ],
+        "tags": ["Promo"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4518,9 +4416,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Promo"
-        ],
+        "tags": ["Promo"],
         "parameters": [
           {
             "name": "code",
@@ -4586,9 +4482,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Promo"
-        ],
+        "tags": ["Promo"],
         "parameters": []
       }
     },
@@ -4639,9 +4533,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Promo"
-        ],
+        "tags": ["Promo"],
         "parameters": [
           {
             "name": "id",
@@ -4701,9 +4593,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Promo"
-        ],
+        "tags": ["Promo"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4775,9 +4665,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Promo"
-        ],
+        "tags": ["Promo"],
         "parameters": [
           {
             "name": "id",
@@ -4842,9 +4730,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Testimonial"
-        ],
+        "tags": ["Testimonial"],
         "parameters": [
           {
             "name": "_limit",
@@ -5030,9 +4916,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Testimonial"
-        ],
+        "tags": ["Testimonial"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5097,9 +4981,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Testimonial"
-        ],
+        "tags": ["Testimonial"],
         "parameters": []
       }
     },
@@ -5150,9 +5032,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Testimonial"
-        ],
+        "tags": ["Testimonial"],
         "parameters": [
           {
             "name": "id",
@@ -5212,9 +5092,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Testimonial"
-        ],
+        "tags": ["Testimonial"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5286,9 +5164,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Testimonial"
-        ],
+        "tags": ["Testimonial"],
         "parameters": [
           {
             "name": "id",
@@ -5354,9 +5230,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Email - Email"
-        ],
+        "tags": ["Email - Email"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5425,9 +5299,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Email - Email"
-        ],
+        "tags": ["Email - Email"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5496,9 +5368,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Email - Email"
-        ],
+        "tags": ["Email - Email"],
         "parameters": []
       }
     },
@@ -5553,9 +5423,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5624,9 +5492,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": []
       }
     },
@@ -5681,9 +5547,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": []
       }
     },
@@ -5738,9 +5602,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": [
           {
             "name": "id",
@@ -5804,9 +5666,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": [
           {
             "name": "id",
@@ -5872,9 +5732,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": [
           {
             "name": "id",
@@ -5936,9 +5794,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "parameters": [
           {
             "name": "id",
@@ -6003,9 +5859,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "parameters": [
           {
             "name": "_limit",
@@ -6191,9 +6045,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -6254,9 +6106,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "parameters": [
           {
             "name": "role",
@@ -6331,9 +6181,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "parameters": [
           {
             "name": "role",
@@ -6398,9 +6246,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "id",
@@ -6602,9 +6448,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": []
       }
     },
@@ -6659,9 +6503,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -6726,9 +6568,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -6793,9 +6633,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "provider",
@@ -6861,9 +6699,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -6932,9 +6768,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -7003,9 +6837,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": []
       }
     },
@@ -7060,9 +6892,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -7130,9 +6960,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "_limit",
@@ -7320,9 +7148,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": []
       }
     },
@@ -7373,9 +7199,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "id",
@@ -7435,9 +7259,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "id",
@@ -7512,9 +7334,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "id",
@@ -7533,9 +7353,7 @@
   "components": {
     "schemas": {
       "Address": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string"
@@ -7559,11 +7377,7 @@
             "type": "string"
           },
           "user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
+            "required": ["id", "username", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -7690,9 +7504,7 @@
         }
       },
       "Category": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string"
@@ -7706,10 +7518,7 @@
           "products": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "StockDetails"
-              ],
+              "required": ["id", "StockDetails"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -7764,6 +7573,9 @@
                 },
                 "gallery": {
                   "type": "component"
+                },
+                "isSoldOut": {
+                  "type": "boolean"
                 },
                 "published_at": {
                   "type": "string"
@@ -7834,14 +7646,12 @@
         }
       },
       "Class": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string"
           },
           "slug": {
@@ -7850,10 +7660,7 @@
           "products": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "StockDetails"
-              ],
+              "required": ["id", "StockDetails"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -7909,6 +7716,9 @@
                 "gallery": {
                   "type": "component"
                 },
+                "isSoldOut": {
+                  "type": "boolean"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -7921,6 +7731,85 @@
               }
             }
           },
+          "priority": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "img": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "tagLine": {
+            "type": "string"
+          },
+          "subTitle": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7929,7 +7818,7 @@
       },
       "NewClass": {
         "properties": {
-          "name": {
+          "title": {
             "type": "string"
           },
           "slug": {
@@ -7940,6 +7829,18 @@
             "items": {
               "type": "string"
             }
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "tagLine": {
+            "type": "string"
+          },
+          "subTitle": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -7954,14 +7855,12 @@
         }
       },
       "Color": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string"
           },
           "slug": {
@@ -7970,10 +7869,7 @@
           "products": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "StockDetails"
-              ],
+              "required": ["id", "StockDetails"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -8029,6 +7925,9 @@
                 "gallery": {
                   "type": "component"
                 },
+                "isSoldOut": {
+                  "type": "boolean"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -8041,6 +7940,152 @@
               }
             }
           },
+          "priority": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "tagLine": {
+            "type": "string"
+          },
+          "longImg": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "shortImg": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "subTitle": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -8049,7 +8094,7 @@
       },
       "NewColor": {
         "properties": {
-          "name": {
+          "title": {
             "type": "string"
           },
           "slug": {
@@ -8060,6 +8105,18 @@
             "items": {
               "type": "string"
             }
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "tagLine": {
+            "type": "string"
+          },
+          "subTitle": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -8074,9 +8131,7 @@
         }
       },
       "Giftcard": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string"
@@ -8096,10 +8151,7 @@
           "promos": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "promoCode"
-              ],
+              "required": ["id", "promoCode"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -8249,10 +8301,7 @@
         }
       },
       "Internationalization": {
-        "required": [
-          "id",
-          "currency"
-        ],
+        "required": ["id", "currency"],
         "properties": {
           "id": {
             "type": "string"
@@ -8260,10 +8309,7 @@
           "currency": {
             "type": "string",
             "default": "INR",
-            "enum": [
-              "USD",
-              "INR"
-            ]
+            "enum": ["USD", "INR"]
           },
           "published_at": {
             "type": "string",
@@ -8272,17 +8318,12 @@
         }
       },
       "NewInternationalization": {
-        "required": [
-          "currency"
-        ],
+        "required": ["currency"],
         "properties": {
           "currency": {
             "type": "string",
             "default": "INR",
-            "enum": [
-              "USD",
-              "INR"
-            ]
+            "enum": ["USD", "INR"]
           },
           "published_at": {
             "type": "string",
@@ -8297,9 +8338,7 @@
         }
       },
       "Order": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string"
@@ -8321,11 +8360,7 @@
             "type": "number"
           },
           "user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
+            "required": ["id", "username", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -8402,18 +8437,13 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
                 },
                 "product": {
-                  "required": [
-                    "id",
-                    "StockDetails"
-                  ],
+                  "required": ["id", "StockDetails"],
                   "properties": {
                     "id": {
                       "type": "string"
@@ -8469,6 +8499,9 @@
                     "gallery": {
                       "type": "component"
                     },
+                    "isSoldOut": {
+                      "type": "boolean"
+                    },
                     "published_at": {
                       "type": "string"
                     },
@@ -8494,9 +8527,7 @@
           },
           "Shipping": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -8531,10 +8562,7 @@
             "type": "string"
           },
           "promo": {
-            "required": [
-              "id",
-              "promoCode"
-            ],
+            "required": ["id", "promoCode"],
             "properties": {
               "id": {
                 "type": "string"
@@ -8582,10 +8610,7 @@
           },
           "paymentGateway": {
             "type": "string",
-            "enum": [
-              "Stripe",
-              "Razorpay"
-            ]
+            "enum": ["Stripe", "Razorpay"]
           },
           "published_at": {
             "type": "string",
@@ -8618,18 +8643,13 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
                 },
                 "product": {
-                  "required": [
-                    "id",
-                    "StockDetails"
-                  ],
+                  "required": ["id", "StockDetails"],
                   "properties": {
                     "id": {
                       "type": "string"
@@ -8685,6 +8705,9 @@
                     "gallery": {
                       "type": "component"
                     },
+                    "isSoldOut": {
+                      "type": "boolean"
+                    },
                     "published_at": {
                       "type": "string"
                     },
@@ -8710,9 +8733,7 @@
           },
           "Shipping": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -8754,10 +8775,7 @@
           },
           "paymentGateway": {
             "type": "string",
-            "enum": [
-              "Stripe",
-              "Razorpay"
-            ]
+            "enum": ["Stripe", "Razorpay"]
           },
           "published_at": {
             "type": "string",
@@ -8772,10 +8790,7 @@
         }
       },
       "Product": {
-        "required": [
-          "id",
-          "StockDetails"
-        ],
+        "required": ["id", "StockDetails"],
         "properties": {
           "id": {
             "type": "string"
@@ -8861,9 +8876,7 @@
           },
           "SEO": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -8878,9 +8891,7 @@
           },
           "ProductDetails": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -8916,11 +8927,7 @@
           },
           "StockDetails": {
             "type": "object",
-            "required": [
-              "id",
-              "SKU",
-              "Stock"
-            ],
+            "required": ["id", "SKU", "Stock"],
             "properties": {
               "id": {
                 "type": "string"
@@ -8930,19 +8937,13 @@
               },
               "Stock": {
                 "type": "integer"
-              },
-              "isSoldOut": {
-                "type": "boolean",
-                "default": false
               }
             }
           },
           "categories": {
             "type": "array",
             "items": {
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -9056,14 +9057,12 @@
           "classes": {
             "type": "array",
             "items": {
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "name": {
+                "title": {
                   "type": "string"
                 },
                 "slug": {
@@ -9074,6 +9073,21 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "priority": {
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "img": {
+                  "type": "string"
+                },
+                "tagLine": {
+                  "type": "string"
+                },
+                "subTitle": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"
@@ -9090,14 +9104,12 @@
           "colors": {
             "type": "array",
             "items": {
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "name": {
+                "title": {
                   "type": "string"
                 },
                 "slug": {
@@ -9108,6 +9120,24 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "priority": {
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "tagLine": {
+                  "type": "string"
+                },
+                "longImg": {
+                  "type": "string"
+                },
+                "shortImg": {
+                  "type": "string"
+                },
+                "subTitle": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"
@@ -9123,9 +9153,7 @@
           },
           "gallery": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -9400,6 +9428,10 @@
               }
             }
           },
+          "isSoldOut": {
+            "type": "boolean",
+            "default": false
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -9407,9 +9439,7 @@
         }
       },
       "NewProduct": {
-        "required": [
-          "StockDetails"
-        ],
+        "required": ["StockDetails"],
         "properties": {
           "name": {
             "type": "string"
@@ -9425,9 +9455,7 @@
           },
           "SEO": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -9442,9 +9470,7 @@
           },
           "ProductDetails": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -9480,11 +9506,7 @@
           },
           "StockDetails": {
             "type": "object",
-            "required": [
-              "id",
-              "SKU",
-              "Stock"
-            ],
+            "required": ["id", "SKU", "Stock"],
             "properties": {
               "id": {
                 "type": "string"
@@ -9494,10 +9516,6 @@
               },
               "Stock": {
                 "type": "integer"
-              },
-              "isSoldOut": {
-                "type": "boolean",
-                "default": false
               }
             }
           },
@@ -9521,9 +9539,7 @@
           },
           "gallery": {
             "type": "object",
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -9798,6 +9814,10 @@
               }
             }
           },
+          "isSoldOut": {
+            "type": "boolean",
+            "default": false
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -9811,10 +9831,7 @@
         }
       },
       "Promo": {
-        "required": [
-          "id",
-          "promoCode"
-        ],
+        "required": ["id", "promoCode"],
         "properties": {
           "id": {
             "type": "string"
@@ -9823,9 +9840,7 @@
             "type": "string"
           },
           "giftcard": {
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -9863,11 +9878,7 @@
             }
           },
           "user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
+            "required": ["id", "username", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -9958,9 +9969,7 @@
             "type": "string"
           },
           "order": {
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -10009,10 +10018,7 @@
               },
               "paymentGateway": {
                 "type": "string",
-                "enum": [
-                  "Stripe",
-                  "Razorpay"
-                ]
+                "enum": ["Stripe", "Razorpay"]
               },
               "published_at": {
                 "type": "string"
@@ -10032,9 +10038,7 @@
         }
       },
       "NewPromo": {
-        "required": [
-          "promoCode"
-        ],
+        "required": ["promoCode"],
         "properties": {
           "promoCode": {
             "type": "string"
@@ -10078,11 +10082,7 @@
         }
       },
       "Testimonial": {
-        "required": [
-          "id",
-          "Testimonial",
-          "NickName"
-        ],
+        "required": ["id", "Testimonial", "NickName"],
         "properties": {
           "id": {
             "type": "string"
@@ -10091,11 +10091,7 @@
             "type": "string"
           },
           "User": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
+            "required": ["id", "username", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -10182,10 +10178,7 @@
         }
       },
       "NewTestimonial": {
-        "required": [
-          "Testimonial",
-          "NickName"
-        ],
+        "required": ["Testimonial", "NickName"],
         "properties": {
           "Testimonial": {
             "type": "string"
@@ -10213,10 +10206,7 @@
         }
       },
       "UsersPermissionsRole": {
-        "required": [
-          "id",
-          "name"
-        ],
+        "required": ["id", "name"],
         "properties": {
           "id": {
             "type": "string"
@@ -10234,13 +10224,7 @@
           "permissions": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "type",
-                "controller",
-                "action",
-                "enabled"
-              ],
+              "required": ["id", "type", "controller", "action", "enabled"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -10275,11 +10259,7 @@
           "users": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "username",
-                "email"
-              ],
+              "required": ["id", "username", "email"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -10356,9 +10336,7 @@
         }
       },
       "NewUsersPermissionsRole": {
-        "required": [
-          "name"
-        ],
+        "required": ["name"],
         "properties": {
           "name": {
             "type": "string",
@@ -10391,11 +10369,7 @@
         }
       },
       "UsersPermissionsUser": {
-        "required": [
-          "id",
-          "username",
-          "email"
-        ],
+        "required": ["id", "username", "email"],
         "properties": {
           "id": {
             "type": "string"
@@ -10420,10 +10394,7 @@
             "default": false
           },
           "role": {
-            "required": [
-              "id",
-              "name"
-            ],
+            "required": ["id", "name"],
             "properties": {
               "id": {
                 "type": "string"
@@ -10460,9 +10431,7 @@
           "orders": {
             "type": "array",
             "items": {
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -10511,10 +10480,7 @@
                 },
                 "paymentGateway": {
                   "type": "string",
-                  "enum": [
-                    "Stripe",
-                    "Razorpay"
-                  ]
+                  "enum": ["Stripe", "Razorpay"]
                 },
                 "published_at": {
                   "type": "string"
@@ -10531,11 +10497,7 @@
           "Testimonials": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "Testimonial",
-                "NickName"
-              ],
+              "required": ["id", "Testimonial", "NickName"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -10634,10 +10596,7 @@
           "promos": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "promoCode"
-              ],
+              "required": ["id", "promoCode"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -10688,9 +10647,7 @@
           "addresses": {
             "type": "array",
             "items": {
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -10740,10 +10697,7 @@
         }
       },
       "NewUsersPermissionsUser": {
-        "required": [
-          "username",
-          "email"
-        ],
+        "required": ["username", "email"],
         "properties": {
           "username": {
             "type": "string",
@@ -10818,10 +10772,7 @@
         }
       },
       "Error": {
-        "required": [
-          "code",
-          "message"
-        ],
+        "required": ["code", "message"],
         "properties": {
           "code": {
             "type": "integer",

@@ -77,6 +77,10 @@
       "type": "component",
       "repeatable": false,
       "component": "product.image-gallery"
+    },
+    "isSoldOut": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

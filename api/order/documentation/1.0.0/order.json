@@ -829,6 +829,9 @@
                     "gallery": {
                       "type": "component"
                     },
+                    "isSoldOut": {
+                      "type": "boolean"
+                    },
                     "published_at": {
                       "type": "string"
                     },
@@ -1044,6 +1047,9 @@
                     },
                     "gallery": {
                       "type": "component"
+                    },
+                    "isSoldOut": {
+                      "type": "boolean"
                     },
                     "published_at": {
                       "type": "string"

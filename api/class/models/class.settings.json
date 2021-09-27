@@ -11,16 +11,41 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "name": {
+    "title": {
       "type": "string"
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "title"
     },
     "products": {
       "via": "classes",
       "collection": "product",
       "dominant": true
+    },
+    "priority": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "text"
+    },
+    "img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "tagLine": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
     }
   }
 }

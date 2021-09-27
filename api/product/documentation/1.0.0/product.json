@@ -673,10 +673,6 @@
               },
               "Stock": {
                 "type": "integer"
-              },
-              "isSoldOut": {
-                "type": "boolean",
-                "default": false
               }
             }
           },
@@ -806,7 +802,7 @@
                 "id": {
                   "type": "string"
                 },
-                "name": {
+                "title": {
                   "type": "string"
                 },
                 "slug": {
@@ -817,6 +813,21 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "priority": {
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "img": {
+                  "type": "string"
+                },
+                "tagLine": {
+                  "type": "string"
+                },
+                "subTitle": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"
@@ -840,7 +851,7 @@
                 "id": {
                   "type": "string"
                 },
-                "name": {
+                "title": {
                   "type": "string"
                 },
                 "slug": {
@@ -851,6 +862,24 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "priority": {
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "tagLine": {
+                  "type": "string"
+                },
+                "longImg": {
+                  "type": "string"
+                },
+                "shortImg": {
+                  "type": "string"
+                },
+                "subTitle": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"
@@ -1143,6 +1172,10 @@
               }
             }
           },
+          "isSoldOut": {
+            "type": "boolean",
+            "default": false
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -1237,10 +1270,6 @@
               },
               "Stock": {
                 "type": "integer"
-              },
-              "isSoldOut": {
-                "type": "boolean",
-                "default": false
               }
             }
           },
@@ -1540,6 +1569,10 @@
                 }
               }
             }
+          },
+          "isSoldOut": {
+            "type": "boolean",
+            "default": false
           },
           "published_at": {
             "type": "string",
