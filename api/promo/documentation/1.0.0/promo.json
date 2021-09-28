@@ -736,46 +736,6 @@
           "promoCode": {
             "type": "string"
           },
-          "giftcard": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "slug": {
-                "type": "uid"
-              },
-              "price": {
-                "type": "number"
-              },
-              "description": {
-                "type": "string"
-              },
-              "promos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "img": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "user": {
             "required": [
               "id",
@@ -951,9 +911,6 @@
         ],
         "properties": {
           "promoCode": {
-            "type": "string"
-          },
-          "giftcard": {
             "type": "string"
           },
           "user": {

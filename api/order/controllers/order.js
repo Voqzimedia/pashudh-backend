@@ -169,7 +169,7 @@ module.exports = {
       });
     }
 
-    if (paymentGateway == "Razorpay") {
+    if (paymentGateway.name == "Razorpay") {
       const newOrder = await strapi.services.order.create({
         user: user.id,
         total: totalAmount,
@@ -179,7 +179,7 @@ module.exports = {
         userPhone: phone,
         userName: name,
         promo: promo.id,
-        paymentGateway: paymentGateway,
+        paymentGateway: paymentGateway.name,
       });
 
       var options = {

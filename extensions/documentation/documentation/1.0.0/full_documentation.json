@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/27/2021 5:32:32 PM"
+    "x-generation-date": "09/28/2021 7:14:01 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -95,7 +95,9 @@
           }
         },
         "summary": "",
-        "tags": ["Address"],
+        "tags": [
+          "Address"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -281,7 +283,9 @@
           }
         },
         "summary": "",
-        "tags": ["Address"],
+        "tags": [
+          "Address"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -346,7 +350,9 @@
           }
         },
         "summary": "",
-        "tags": ["Address"],
+        "tags": [
+          "Address"
+        ],
         "parameters": []
       }
     },
@@ -397,7 +403,9 @@
           }
         },
         "summary": "",
-        "tags": ["Address"],
+        "tags": [
+          "Address"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -457,7 +465,9 @@
           }
         },
         "summary": "",
-        "tags": ["Address"],
+        "tags": [
+          "Address"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -529,7 +539,9 @@
           }
         },
         "summary": "",
-        "tags": ["Address"],
+        "tags": [
+          "Address"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -594,7 +606,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -780,7 +794,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -845,7 +861,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": []
       }
     },
@@ -896,7 +914,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -956,7 +976,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1028,7 +1050,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1093,7 +1117,9 @@
           }
         },
         "summary": "",
-        "tags": ["Class"],
+        "tags": [
+          "Class"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -1279,7 +1305,9 @@
           }
         },
         "summary": "",
-        "tags": ["Class"],
+        "tags": [
+          "Class"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1344,7 +1372,9 @@
           }
         },
         "summary": "",
-        "tags": ["Class"],
+        "tags": [
+          "Class"
+        ],
         "parameters": []
       }
     },
@@ -1395,7 +1425,9 @@
           }
         },
         "summary": "",
-        "tags": ["Class"],
+        "tags": [
+          "Class"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1455,7 +1487,9 @@
           }
         },
         "summary": "",
-        "tags": ["Class"],
+        "tags": [
+          "Class"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1527,7 +1561,9 @@
           }
         },
         "summary": "",
-        "tags": ["Class"],
+        "tags": [
+          "Class"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1592,7 +1628,9 @@
           }
         },
         "summary": "",
-        "tags": ["Color"],
+        "tags": [
+          "Color"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -1778,7 +1816,9 @@
           }
         },
         "summary": "",
-        "tags": ["Color"],
+        "tags": [
+          "Color"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1843,7 +1883,9 @@
           }
         },
         "summary": "",
-        "tags": ["Color"],
+        "tags": [
+          "Color"
+        ],
         "parameters": []
       }
     },
@@ -1894,7 +1936,9 @@
           }
         },
         "summary": "",
-        "tags": ["Color"],
+        "tags": [
+          "Color"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1954,7 +1998,9 @@
           }
         },
         "summary": "",
-        "tags": ["Color"],
+        "tags": [
+          "Color"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2026,506 +2072,9 @@
           }
         },
         "summary": "",
-        "tags": ["Color"],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
-    "/giftcards": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Giftcard"
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": ["Giftcard"],
-        "parameters": [
-          {
-            "name": "_limit",
-            "in": "query",
-            "required": false,
-            "description": "Maximum number of results possible",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_sort",
-            "in": "query",
-            "required": false,
-            "description": "Sort according to a specific field.",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_start",
-            "in": "query",
-            "required": false,
-            "description": "Skip a specific number of entries (especially useful for pagination)",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "=",
-            "in": "query",
-            "required": false,
-            "description": "Get entries that matches exactly your input",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_ne",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are not equals to something",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lt",
-            "in": "query",
-            "required": false,
-            "description": "Get record that are lower than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are lower than or equal to a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gt",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than  or equal a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_contains",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_containss",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains (case sensitive) a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_in",
-            "in": "query",
-            "required": false,
-            "description": "Get records that matches any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_nin",
-            "in": "query",
-            "required": false,
-            "description": "Get records that doesn't match any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          }
-        ]
-      },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Giftcard"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": ["Giftcard"],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewGiftcard"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/giftcards/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": ["Giftcard"],
-        "parameters": []
-      }
-    },
-    "/giftcards/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Giftcard"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": ["Giftcard"],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
-      "put": {
-        "deprecated": false,
-        "description": "Update a record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Giftcard"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": ["Giftcard"],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewGiftcard"
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
-      "delete": {
-        "deprecated": false,
-        "description": "Delete a record",
-        "responses": {
-          "200": {
-            "description": "deletes a single record based on the ID supplied",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int64"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": ["Giftcard"],
+        "tags": [
+          "Color"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2590,7 +2139,9 @@
           }
         },
         "summary": "",
-        "tags": ["Internationalization"],
+        "tags": [
+          "Internationalization"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -2776,7 +2327,9 @@
           }
         },
         "summary": "",
-        "tags": ["Internationalization"],
+        "tags": [
+          "Internationalization"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2837,7 +2390,9 @@
           }
         },
         "summary": "",
-        "tags": ["Internationalization"],
+        "tags": [
+          "Internationalization"
+        ],
         "parameters": []
       }
     },
@@ -2892,7 +2447,9 @@
           }
         },
         "summary": "",
-        "tags": ["Order"],
+        "tags": [
+          "Order"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2961,7 +2518,9 @@
           }
         },
         "summary": "",
-        "tags": ["Order"],
+        "tags": [
+          "Order"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3029,7 +2588,9 @@
           }
         },
         "summary": "",
-        "tags": ["Order"],
+        "tags": [
+          "Order"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -3215,7 +2776,9 @@
           }
         },
         "summary": "",
-        "tags": ["Order"],
+        "tags": [
+          "Order"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3280,7 +2843,9 @@
           }
         },
         "summary": "",
-        "tags": ["Order"],
+        "tags": [
+          "Order"
+        ],
         "parameters": []
       }
     },
@@ -3331,7 +2896,9 @@
           }
         },
         "summary": "",
-        "tags": ["Order"],
+        "tags": [
+          "Order"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -3391,7 +2958,9 @@
           }
         },
         "summary": "",
-        "tags": ["Order"],
+        "tags": [
+          "Order"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3463,7 +3032,9 @@
           }
         },
         "summary": "",
-        "tags": ["Order"],
+        "tags": [
+          "Order"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -3528,7 +3099,9 @@
           }
         },
         "summary": "",
-        "tags": ["Product"],
+        "tags": [
+          "Product"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -3714,7 +3287,9 @@
           }
         },
         "summary": "",
-        "tags": ["Product"],
+        "tags": [
+          "Product"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3779,7 +3354,9 @@
           }
         },
         "summary": "",
-        "tags": ["Product"],
+        "tags": [
+          "Product"
+        ],
         "parameters": []
       }
     },
@@ -3830,7 +3407,9 @@
           }
         },
         "summary": "",
-        "tags": ["Product"],
+        "tags": [
+          "Product"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -3890,7 +3469,9 @@
           }
         },
         "summary": "",
-        "tags": ["Product"],
+        "tags": [
+          "Product"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3962,7 +3543,9 @@
           }
         },
         "summary": "",
-        "tags": ["Product"],
+        "tags": [
+          "Product"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -4028,7 +3611,9 @@
           }
         },
         "summary": "",
-        "tags": ["Promo"],
+        "tags": [
+          "Promo"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4097,7 +3682,9 @@
           }
         },
         "summary": "",
-        "tags": ["Promo"],
+        "tags": [
+          "Promo"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4165,7 +3752,9 @@
           }
         },
         "summary": "",
-        "tags": ["Promo"],
+        "tags": [
+          "Promo"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -4351,7 +3940,9 @@
           }
         },
         "summary": "",
-        "tags": ["Promo"],
+        "tags": [
+          "Promo"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4416,7 +4007,9 @@
           }
         },
         "summary": "",
-        "tags": ["Promo"],
+        "tags": [
+          "Promo"
+        ],
         "parameters": [
           {
             "name": "code",
@@ -4482,7 +4075,9 @@
           }
         },
         "summary": "",
-        "tags": ["Promo"],
+        "tags": [
+          "Promo"
+        ],
         "parameters": []
       }
     },
@@ -4533,7 +4128,9 @@
           }
         },
         "summary": "",
-        "tags": ["Promo"],
+        "tags": [
+          "Promo"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -4593,7 +4190,9 @@
           }
         },
         "summary": "",
-        "tags": ["Promo"],
+        "tags": [
+          "Promo"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4665,7 +4264,9 @@
           }
         },
         "summary": "",
-        "tags": ["Promo"],
+        "tags": [
+          "Promo"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -4730,7 +4331,9 @@
           }
         },
         "summary": "",
-        "tags": ["Testimonial"],
+        "tags": [
+          "Testimonial"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -4916,7 +4519,9 @@
           }
         },
         "summary": "",
-        "tags": ["Testimonial"],
+        "tags": [
+          "Testimonial"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4981,7 +4586,9 @@
           }
         },
         "summary": "",
-        "tags": ["Testimonial"],
+        "tags": [
+          "Testimonial"
+        ],
         "parameters": []
       }
     },
@@ -5032,7 +4639,9 @@
           }
         },
         "summary": "",
-        "tags": ["Testimonial"],
+        "tags": [
+          "Testimonial"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -5092,7 +4701,9 @@
           }
         },
         "summary": "",
-        "tags": ["Testimonial"],
+        "tags": [
+          "Testimonial"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5164,7 +4775,9 @@
           }
         },
         "summary": "",
-        "tags": ["Testimonial"],
+        "tags": [
+          "Testimonial"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -5230,7 +4843,9 @@
           }
         },
         "summary": "",
-        "tags": ["Email - Email"],
+        "tags": [
+          "Email - Email"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5299,7 +4914,9 @@
           }
         },
         "summary": "",
-        "tags": ["Email - Email"],
+        "tags": [
+          "Email - Email"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5368,7 +4985,9 @@
           }
         },
         "summary": "",
-        "tags": ["Email - Email"],
+        "tags": [
+          "Email - Email"
+        ],
         "parameters": []
       }
     },
@@ -5423,7 +5042,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -5492,7 +5113,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": []
       }
     },
@@ -5547,7 +5170,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": []
       }
     },
@@ -5602,7 +5227,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -5666,7 +5293,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -5732,7 +5361,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -5794,7 +5425,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - Role"],
+        "tags": [
+          "UsersPermissions - Role"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -5859,7 +5492,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - Role"],
+        "tags": [
+          "UsersPermissions - Role"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -6045,7 +5680,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - Role"],
+        "tags": [
+          "UsersPermissions - Role"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -6106,7 +5743,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - Role"],
+        "tags": [
+          "UsersPermissions - Role"
+        ],
         "parameters": [
           {
             "name": "role",
@@ -6181,7 +5820,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - Role"],
+        "tags": [
+          "UsersPermissions - Role"
+        ],
         "parameters": [
           {
             "name": "role",
@@ -6246,7 +5887,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -6448,7 +6091,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": []
       }
     },
@@ -6503,7 +6148,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -6568,7 +6215,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -6633,7 +6282,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": [
           {
             "name": "provider",
@@ -6699,7 +6350,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -6768,7 +6421,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -6837,7 +6492,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": []
       }
     },
@@ -6892,7 +6549,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -6960,7 +6619,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -7148,7 +6809,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": []
       }
     },
@@ -7199,7 +6862,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -7259,7 +6924,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -7334,7 +7001,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -7353,7 +7022,9 @@
   "components": {
     "schemas": {
       "Address": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -7377,7 +7048,11 @@
             "type": "string"
           },
           "user": {
-            "required": ["id", "username", "email"],
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -7504,7 +7179,9 @@
         }
       },
       "Category": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -7518,7 +7195,10 @@
           "products": {
             "type": "array",
             "items": {
-              "required": ["id", "StockDetails"],
+              "required": [
+                "id",
+                "StockDetails"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -7601,6 +7281,73 @@
           "priority": {
             "type": "integer"
           },
+          "img": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -7646,7 +7393,9 @@
         }
       },
       "Class": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -7660,7 +7409,10 @@
           "products": {
             "type": "array",
             "items": {
-              "required": ["id", "StockDetails"],
+              "required": [
+                "id",
+                "StockDetails"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -7855,7 +7607,9 @@
         }
       },
       "Color": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -7869,7 +7623,10 @@
           "products": {
             "type": "array",
             "items": {
-              "required": ["id", "StockDetails"],
+              "required": [
+                "id",
+                "StockDetails"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -8130,178 +7887,11 @@
           }
         }
       },
-      "Giftcard": {
-        "required": ["id"],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "uid"
-          },
-          "price": {
-            "type": "number"
-          },
-          "description": {
-            "type": "string"
-          },
-          "promos": {
-            "type": "array",
-            "items": {
-              "required": ["id", "promoCode"],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "promoCode": {
-                  "type": "string"
-                },
-                "giftcard": {
-                  "type": "string"
-                },
-                "user": {
-                  "type": "string"
-                },
-                "promoPrice": {
-                  "type": "number"
-                },
-                "transactionId": {
-                  "type": "string"
-                },
-                "redeemed": {
-                  "type": "boolean"
-                },
-                "paid": {
-                  "type": "boolean"
-                },
-                "emailTo": {
-                  "type": "string"
-                },
-                "order": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "img": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "NewGiftcard": {
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "uid"
-          },
-          "price": {
-            "type": "number"
-          },
-          "description": {
-            "type": "string"
-          },
-          "promos": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "updated_by": {
-            "type": "string"
-          }
-        }
-      },
       "Internationalization": {
-        "required": ["id", "currency"],
+        "required": [
+          "id",
+          "currency"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -8309,7 +7899,10 @@
           "currency": {
             "type": "string",
             "default": "INR",
-            "enum": ["USD", "INR"]
+            "enum": [
+              "USD",
+              "INR"
+            ]
           },
           "published_at": {
             "type": "string",
@@ -8318,12 +7911,17 @@
         }
       },
       "NewInternationalization": {
-        "required": ["currency"],
+        "required": [
+          "currency"
+        ],
         "properties": {
           "currency": {
             "type": "string",
             "default": "INR",
-            "enum": ["USD", "INR"]
+            "enum": [
+              "USD",
+              "INR"
+            ]
           },
           "published_at": {
             "type": "string",
@@ -8338,7 +7936,9 @@
         }
       },
       "Order": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -8360,7 +7960,11 @@
             "type": "number"
           },
           "user": {
-            "required": ["id", "username", "email"],
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -8437,13 +8041,18 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
                 "product": {
-                  "required": ["id", "StockDetails"],
+                  "required": [
+                    "id",
+                    "StockDetails"
+                  ],
                   "properties": {
                     "id": {
                       "type": "string"
@@ -8527,7 +8136,9 @@
           },
           "Shipping": {
             "type": "object",
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -8562,15 +8173,15 @@
             "type": "string"
           },
           "promo": {
-            "required": ["id", "promoCode"],
+            "required": [
+              "id",
+              "promoCode"
+            ],
             "properties": {
               "id": {
                 "type": "string"
               },
               "promoCode": {
-                "type": "string"
-              },
-              "giftcard": {
                 "type": "string"
               },
               "user": {
@@ -8610,7 +8221,10 @@
           },
           "paymentGateway": {
             "type": "string",
-            "enum": ["Stripe", "Razorpay"]
+            "enum": [
+              "Stripe",
+              "Razorpay"
+            ]
           },
           "published_at": {
             "type": "string",
@@ -8643,13 +8257,18 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
                 "product": {
-                  "required": ["id", "StockDetails"],
+                  "required": [
+                    "id",
+                    "StockDetails"
+                  ],
                   "properties": {
                     "id": {
                       "type": "string"
@@ -8733,7 +8352,9 @@
           },
           "Shipping": {
             "type": "object",
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -8775,7 +8396,10 @@
           },
           "paymentGateway": {
             "type": "string",
-            "enum": ["Stripe", "Razorpay"]
+            "enum": [
+              "Stripe",
+              "Razorpay"
+            ]
           },
           "published_at": {
             "type": "string",
@@ -8790,7 +8414,10 @@
         }
       },
       "Product": {
-        "required": ["id", "StockDetails"],
+        "required": [
+          "id",
+          "StockDetails"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -8876,7 +8503,9 @@
           },
           "SEO": {
             "type": "object",
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -8891,7 +8520,9 @@
           },
           "ProductDetails": {
             "type": "object",
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -8927,7 +8558,11 @@
           },
           "StockDetails": {
             "type": "object",
-            "required": ["id", "SKU", "Stock"],
+            "required": [
+              "id",
+              "SKU",
+              "Stock"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -8943,7 +8578,9 @@
           "categories": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -8971,6 +8608,9 @@
                 },
                 "priority": {
                   "type": "integer"
+                },
+                "img": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"
@@ -9057,7 +8697,9 @@
           "classes": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -9104,7 +8746,9 @@
           "colors": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -9153,7 +8797,9 @@
           },
           "gallery": {
             "type": "object",
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -9439,7 +9085,9 @@
         }
       },
       "NewProduct": {
-        "required": ["StockDetails"],
+        "required": [
+          "StockDetails"
+        ],
         "properties": {
           "name": {
             "type": "string"
@@ -9455,7 +9103,9 @@
           },
           "SEO": {
             "type": "object",
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -9470,7 +9120,9 @@
           },
           "ProductDetails": {
             "type": "object",
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -9506,7 +9158,11 @@
           },
           "StockDetails": {
             "type": "object",
-            "required": ["id", "SKU", "Stock"],
+            "required": [
+              "id",
+              "SKU",
+              "Stock"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -9539,7 +9195,9 @@
           },
           "gallery": {
             "type": "object",
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -9831,7 +9489,10 @@
         }
       },
       "Promo": {
-        "required": ["id", "promoCode"],
+        "required": [
+          "id",
+          "promoCode"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -9839,46 +9500,12 @@
           "promoCode": {
             "type": "string"
           },
-          "giftcard": {
-            "required": ["id"],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "slug": {
-                "type": "uid"
-              },
-              "price": {
-                "type": "number"
-              },
-              "description": {
-                "type": "string"
-              },
-              "promos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "img": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "user": {
-            "required": ["id", "username", "email"],
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -9969,7 +9596,9 @@
             "type": "string"
           },
           "order": {
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -10018,7 +9647,10 @@
               },
               "paymentGateway": {
                 "type": "string",
-                "enum": ["Stripe", "Razorpay"]
+                "enum": [
+                  "Stripe",
+                  "Razorpay"
+                ]
               },
               "published_at": {
                 "type": "string"
@@ -10038,12 +9670,11 @@
         }
       },
       "NewPromo": {
-        "required": ["promoCode"],
+        "required": [
+          "promoCode"
+        ],
         "properties": {
           "promoCode": {
-            "type": "string"
-          },
-          "giftcard": {
             "type": "string"
           },
           "user": {
@@ -10082,7 +9713,11 @@
         }
       },
       "Testimonial": {
-        "required": ["id", "Testimonial", "NickName"],
+        "required": [
+          "id",
+          "Testimonial",
+          "NickName"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -10091,7 +9726,11 @@
             "type": "string"
           },
           "User": {
-            "required": ["id", "username", "email"],
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -10178,7 +9817,10 @@
         }
       },
       "NewTestimonial": {
-        "required": ["Testimonial", "NickName"],
+        "required": [
+          "Testimonial",
+          "NickName"
+        ],
         "properties": {
           "Testimonial": {
             "type": "string"
@@ -10206,7 +9848,10 @@
         }
       },
       "UsersPermissionsRole": {
-        "required": ["id", "name"],
+        "required": [
+          "id",
+          "name"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -10224,7 +9869,13 @@
           "permissions": {
             "type": "array",
             "items": {
-              "required": ["id", "type", "controller", "action", "enabled"],
+              "required": [
+                "id",
+                "type",
+                "controller",
+                "action",
+                "enabled"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -10259,7 +9910,11 @@
           "users": {
             "type": "array",
             "items": {
-              "required": ["id", "username", "email"],
+              "required": [
+                "id",
+                "username",
+                "email"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -10336,7 +9991,9 @@
         }
       },
       "NewUsersPermissionsRole": {
-        "required": ["name"],
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string",
@@ -10369,7 +10026,11 @@
         }
       },
       "UsersPermissionsUser": {
-        "required": ["id", "username", "email"],
+        "required": [
+          "id",
+          "username",
+          "email"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -10394,7 +10055,10 @@
             "default": false
           },
           "role": {
-            "required": ["id", "name"],
+            "required": [
+              "id",
+              "name"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -10431,7 +10095,9 @@
           "orders": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -10480,7 +10146,10 @@
                 },
                 "paymentGateway": {
                   "type": "string",
-                  "enum": ["Stripe", "Razorpay"]
+                  "enum": [
+                    "Stripe",
+                    "Razorpay"
+                  ]
                 },
                 "published_at": {
                   "type": "string"
@@ -10497,7 +10166,11 @@
           "Testimonials": {
             "type": "array",
             "items": {
-              "required": ["id", "Testimonial", "NickName"],
+              "required": [
+                "id",
+                "Testimonial",
+                "NickName"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -10596,15 +10269,15 @@
           "promos": {
             "type": "array",
             "items": {
-              "required": ["id", "promoCode"],
+              "required": [
+                "id",
+                "promoCode"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
                 "promoCode": {
-                  "type": "string"
-                },
-                "giftcard": {
                   "type": "string"
                 },
                 "user": {
@@ -10647,7 +10320,9 @@
           "addresses": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -10697,7 +10372,10 @@
         }
       },
       "NewUsersPermissionsUser": {
-        "required": ["username", "email"],
+        "required": [
+          "username",
+          "email"
+        ],
         "properties": {
           "username": {
             "type": "string",
@@ -10772,7 +10450,10 @@
         }
       },
       "Error": {
-        "required": ["code", "message"],
+        "required": [
+          "code",
+          "message"
+        ],
         "properties": {
           "code": {
             "type": "integer",
@@ -10804,9 +10485,6 @@
     },
     {
       "name": "Color"
-    },
-    {
-      "name": "Giftcard"
     },
     {
       "name": "Internationalization"

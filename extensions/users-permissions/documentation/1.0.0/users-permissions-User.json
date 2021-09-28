@@ -1439,9 +1439,6 @@
                 "promoCode": {
                   "type": "string"
                 },
-                "giftcard": {
-                  "type": "string"
-                },
                 "user": {
                   "type": "string"
                 },

@@ -81,19 +81,7 @@ module.exports = {
     const { giftcard, emailTo, paymentGateway } = ctx.request.body;
     const { user } = ctx.state; //From JWT
 
-    // console.log({ giftcard, emailTo });
-
-    if (!giftcard) {
-      return res.status(400).send({ error: "Please add a giftcard to body" });
-    }
-
-    const realGiftcard = await strapi.services.giftcard.findOne({
-      slug: giftcard,
-    });
-
-    if (!realGiftcard) {
-      return res.status(400).send({ error: "Giftcard is not found" });
-    }
+    // console.log({ giftcard, emailTo, paymentGateway });
 
     const today = await getToday();
 
@@ -107,52 +95,16 @@ module.exports = {
 
     // //TODO Create Temp Promo here
 
-    if (paymentGateway == "Stripe") {
+    if (paymentGateway.name == "Razorpay") {
       const newPromo = await strapi.services.promo.create({
-        promoCode: promoCode[0],
-        giftcard: realGiftcard.id,
+        promoCode: promoCode[0].toUpperCase(),
         user: user.id,
-        promoPrice: realGiftcard.price,
-        emailTo: emailTo ? emailTo : user.email,
-      });
-
-      const paymentIntent = await stripe.paymentIntents.create({
-        amount: fromDecimalToInt(realGiftcard.price),
-        currency: "inr",
-        metadata: {
-          Customer_Name: user.username,
-          Customer_Email: user.email,
-          User_Phone: user.phone,
-          Site_Url: BASE_URL,
-          Order_Id: `Promo Id #${newPromo.id}`,
-        },
-        receipt_email: user.email,
-        description: `Pashudh PromoId #${newPromo.id}`,
-      });
-
-      const updatePromo = await strapi.services.promo.update(
-        {
-          id: newPromo.id,
-        },
-        {
-          transactionId: paymentIntent.id,
-        }
-      );
-
-      return {
-        client_secret: paymentIntent.client_secret,
-      };
-    } else {
-      const newPromo = await strapi.services.promo.create({
-        promoCode: promoCode[0],
-        giftcard: realGiftcard.id,
-        user: user.id,
-        promoPrice: realGiftcard.price,
+        promoPrice: giftcard.total,
         emailTo: emailTo ? emailTo : user.email,
       });
 
       var options = {
-        amount: fromDecimalToInt(realGiftcard.price), // amount in the smallest currency unit
+        amount: fromDecimalToInt(giftcard.total), // amount in the smallest currency unit
         currency: "INR",
         receipt: `Pashudh PromoId #${newPromo.id}`,
       };
@@ -170,6 +122,10 @@ module.exports = {
 
       return {
         order,
+      };
+    } else {
+      return {
+        paymentGateway,
       };
     }
   },

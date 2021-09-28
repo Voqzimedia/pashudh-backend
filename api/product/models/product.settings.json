@@ -51,8 +51,8 @@
       "required": true
     },
     "categories": {
-      "collection": "category",
-      "via": "products"
+      "via": "products",
+      "collection": "category"
     },
     "GalleryImgs": {
       "collection": "file",

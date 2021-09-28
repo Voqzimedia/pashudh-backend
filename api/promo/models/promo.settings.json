@@ -16,10 +16,6 @@
       "required": true,
       "unique": true
     },
-    "giftcard": {
-      "via": "promos",
-      "model": "giftcard"
-    },
     "user": {
       "via": "promos",
       "plugin": "users-permissions",
