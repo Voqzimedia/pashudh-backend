@@ -51,8 +51,8 @@
       "required": true
     },
     "categories": {
-      "via": "products",
-      "collection": "category"
+      "collection": "category",
+      "via": "products"
     },
     "GalleryImgs": {
       "collection": "file",
@@ -81,6 +81,14 @@
     "isSoldOut": {
       "type": "boolean",
       "default": false
+    },
+    "thisFor": {
+      "type": "enumeration",
+      "enum": [
+        "Women",
+        "Men",
+        "Kids"
+      ]
     }
   }
 }

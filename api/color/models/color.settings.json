@@ -25,39 +25,6 @@
     },
     "priority": {
       "type": "integer"
-    },
-    "description": {
-      "type": "text"
-    },
-    "tagLine": {
-      "type": "string"
-    },
-    "longImg": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
-    },
-    "shortImg": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
-    },
-    "subTitle": {
-      "type": "string"
     }
   }
 }

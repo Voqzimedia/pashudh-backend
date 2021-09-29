@@ -832,6 +832,19 @@
                 "subTitle": {
                   "type": "string"
                 },
+                "longImg": {
+                  "type": "string"
+                },
+                "shortImg": {
+                  "type": "string"
+                },
+                "collectionType": {
+                  "type": "string",
+                  "enum": [
+                    "Class",
+                    "Color"
+                  ]
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -868,21 +881,6 @@
                 },
                 "priority": {
                   "type": "integer"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "tagLine": {
-                  "type": "string"
-                },
-                "longImg": {
-                  "type": "string"
-                },
-                "shortImg": {
-                  "type": "string"
-                },
-                "subTitle": {
-                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"
@@ -1178,6 +1176,14 @@
           "isSoldOut": {
             "type": "boolean",
             "default": false
+          },
+          "thisFor": {
+            "type": "string",
+            "enum": [
+              "Women",
+              "Men",
+              "Kids"
+            ]
           },
           "published_at": {
             "type": "string",
@@ -1576,6 +1582,14 @@
           "isSoldOut": {
             "type": "boolean",
             "default": false
+          },
+          "thisFor": {
+            "type": "string",
+            "enum": [
+              "Women",
+              "Men",
+              "Kids"
+            ]
           },
           "published_at": {
             "type": "string",

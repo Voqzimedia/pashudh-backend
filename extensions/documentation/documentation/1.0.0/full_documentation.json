@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/28/2021 7:14:01 PM"
+    "x-generation-date": "09/29/2021 2:50:18 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7257,6 +7257,14 @@
                 "isSoldOut": {
                   "type": "boolean"
                 },
+                "thisFor": {
+                  "type": "string",
+                  "enum": [
+                    "Women",
+                    "Men",
+                    "Kids"
+                  ]
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -7471,6 +7479,14 @@
                 "isSoldOut": {
                   "type": "boolean"
                 },
+                "thisFor": {
+                  "type": "string",
+                  "enum": [
+                    "Women",
+                    "Men",
+                    "Kids"
+                  ]
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -7560,150 +7576,6 @@
             "type": "string"
           },
           "subTitle": {
-            "type": "string"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "NewClass": {
-        "properties": {
-          "title": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "uid"
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "priority": {
-            "type": "integer"
-          },
-          "description": {
-            "type": "string"
-          },
-          "tagLine": {
-            "type": "string"
-          },
-          "subTitle": {
-            "type": "string"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "updated_by": {
-            "type": "string"
-          }
-        }
-      },
-      "Color": {
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "uid"
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "StockDetails"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "content": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "SEO": {
-                  "type": "component"
-                },
-                "ProductDetails": {
-                  "type": "component"
-                },
-                "StockDetails": {
-                  "type": "component"
-                },
-                "categories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "GalleryImgs": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "classes": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "colors": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "gallery": {
-                  "type": "component"
-                },
-                "isSoldOut": {
-                  "type": "boolean"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "priority": {
-            "type": "integer"
-          },
-          "description": {
-            "type": "string"
-          },
-          "tagLine": {
             "type": "string"
           },
           "longImg": {
@@ -7840,8 +7712,12 @@
               }
             }
           },
-          "subTitle": {
-            "type": "string"
+          "collectionType": {
+            "type": "string",
+            "enum": [
+              "Class",
+              "Color"
+            ]
           },
           "published_at": {
             "type": "string",
@@ -7849,7 +7725,7 @@
           }
         }
       },
-      "NewColor": {
+      "NewClass": {
         "properties": {
           "title": {
             "type": "string"
@@ -7874,6 +7750,150 @@
           },
           "subTitle": {
             "type": "string"
+          },
+          "collectionType": {
+            "type": "string",
+            "enum": [
+              "Class",
+              "Color"
+            ]
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Color": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "StockDetails"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "slug": {
+                  "type": "uid"
+                },
+                "SEO": {
+                  "type": "component"
+                },
+                "ProductDetails": {
+                  "type": "component"
+                },
+                "StockDetails": {
+                  "type": "component"
+                },
+                "categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "GalleryImgs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "classes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "colors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "gallery": {
+                  "type": "component"
+                },
+                "isSoldOut": {
+                  "type": "boolean"
+                },
+                "thisFor": {
+                  "type": "string",
+                  "enum": [
+                    "Women",
+                    "Men",
+                    "Kids"
+                  ]
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewColor": {
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "priority": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",
@@ -8111,6 +8131,14 @@
                     "isSoldOut": {
                       "type": "boolean"
                     },
+                    "thisFor": {
+                      "type": "string",
+                      "enum": [
+                        "Women",
+                        "Men",
+                        "Kids"
+                      ]
+                    },
                     "published_at": {
                       "type": "string"
                     },
@@ -8326,6 +8354,14 @@
                     },
                     "isSoldOut": {
                       "type": "boolean"
+                    },
+                    "thisFor": {
+                      "type": "string",
+                      "enum": [
+                        "Women",
+                        "Men",
+                        "Kids"
+                      ]
                     },
                     "published_at": {
                       "type": "string"
@@ -8731,6 +8767,19 @@
                 "subTitle": {
                   "type": "string"
                 },
+                "longImg": {
+                  "type": "string"
+                },
+                "shortImg": {
+                  "type": "string"
+                },
+                "collectionType": {
+                  "type": "string",
+                  "enum": [
+                    "Class",
+                    "Color"
+                  ]
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -8767,21 +8816,6 @@
                 },
                 "priority": {
                   "type": "integer"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "tagLine": {
-                  "type": "string"
-                },
-                "longImg": {
-                  "type": "string"
-                },
-                "shortImg": {
-                  "type": "string"
-                },
-                "subTitle": {
-                  "type": "string"
                 },
                 "published_at": {
                   "type": "string"
@@ -9077,6 +9111,14 @@
           "isSoldOut": {
             "type": "boolean",
             "default": false
+          },
+          "thisFor": {
+            "type": "string",
+            "enum": [
+              "Women",
+              "Men",
+              "Kids"
+            ]
           },
           "published_at": {
             "type": "string",
@@ -9475,6 +9517,14 @@
           "isSoldOut": {
             "type": "boolean",
             "default": false
+          },
+          "thisFor": {
+            "type": "string",
+            "enum": [
+              "Women",
+              "Men",
+              "Kids"
+            ]
           },
           "published_at": {
             "type": "string",

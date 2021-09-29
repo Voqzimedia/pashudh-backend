@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "classes",
   "info": {
-    "name": "Class",
+    "name": "collection",
     "description": ""
   },
   "options": {
@@ -46,6 +46,37 @@
     },
     "subTitle": {
       "type": "string"
+    },
+    "longImg": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "shortImg": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "collectionType": {
+      "type": "enumeration",
+      "enum": [
+        "Class",
+        "Color"
+      ]
     }
   }
 }
