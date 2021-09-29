@@ -590,6 +590,17 @@
                 "gallery": {
                   "type": "component"
                 },
+                "isSoldOut": {
+                  "type": "boolean"
+                },
+                "thisFor": {
+                  "type": "string",
+                  "enum": [
+                    "Women",
+                    "Men",
+                    "Kids"
+                  ]
+                },
                 "published_at": {
                   "type": "string"
                 },

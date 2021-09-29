@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/22/2021 4:13:27 PM"
+    "x-generation-date": "09/29/2021 2:50:18 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2074,517 +2074,6 @@
         "summary": "",
         "tags": [
           "Color"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
-    "/giftcards": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Giftcard"
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Giftcard"
-        ],
-        "parameters": [
-          {
-            "name": "_limit",
-            "in": "query",
-            "required": false,
-            "description": "Maximum number of results possible",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_sort",
-            "in": "query",
-            "required": false,
-            "description": "Sort according to a specific field.",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_start",
-            "in": "query",
-            "required": false,
-            "description": "Skip a specific number of entries (especially useful for pagination)",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "=",
-            "in": "query",
-            "required": false,
-            "description": "Get entries that matches exactly your input",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_ne",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are not equals to something",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lt",
-            "in": "query",
-            "required": false,
-            "description": "Get record that are lower than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are lower than or equal to a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gt",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than  or equal a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_contains",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_containss",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains (case sensitive) a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_in",
-            "in": "query",
-            "required": false,
-            "description": "Get records that matches any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_nin",
-            "in": "query",
-            "required": false,
-            "description": "Get records that doesn't match any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          }
-        ]
-      },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Giftcard"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Giftcard"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewGiftcard"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/giftcards/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Giftcard"
-        ],
-        "parameters": []
-      }
-    },
-    "/giftcards/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Giftcard"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Giftcard"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
-      "put": {
-        "deprecated": false,
-        "description": "Update a record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Giftcard"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Giftcard"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewGiftcard"
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
-      "delete": {
-        "deprecated": false,
-        "description": "Delete a record",
-        "responses": {
-          "200": {
-            "description": "deletes a single record based on the ID supplied",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int64"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Giftcard"
         ],
         "parameters": [
           {
@@ -7765,6 +7254,17 @@
                 "gallery": {
                   "type": "component"
                 },
+                "isSoldOut": {
+                  "type": "boolean"
+                },
+                "thisFor": {
+                  "type": "string",
+                  "enum": [
+                    "Women",
+                    "Men",
+                    "Kids"
+                  ]
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -7908,7 +7408,7 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string"
           },
           "slug": {
@@ -7976,125 +7476,16 @@
                 "gallery": {
                   "type": "component"
                 },
-                "published_at": {
-                  "type": "string"
+                "isSoldOut": {
+                  "type": "boolean"
                 },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "NewClass": {
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "uid"
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "updated_by": {
-            "type": "string"
-          }
-        }
-      },
-      "Color": {
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "uid"
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "StockDetails"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "content": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "SEO": {
-                  "type": "component"
-                },
-                "ProductDetails": {
-                  "type": "component"
-                },
-                "StockDetails": {
-                  "type": "component"
-                },
-                "categories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "GalleryImgs": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "classes": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "colors": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "gallery": {
-                  "type": "component"
+                "thisFor": {
+                  "type": "string",
+                  "enum": [
+                    "Women",
+                    "Men",
+                    "Kids"
+                  ]
                 },
                 "published_at": {
                   "type": "string"
@@ -8108,107 +7499,11 @@
               }
             }
           },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "NewColor": {
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "uid"
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "updated_by": {
-            "type": "string"
-          }
-        }
-      },
-      "Giftcard": {
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "uid"
-          },
-          "price": {
-            "type": "number"
+          "priority": {
+            "type": "integer"
           },
           "description": {
             "type": "string"
-          },
-          "promos": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "promoCode"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "promoCode": {
-                  "type": "string"
-                },
-                "giftcard": {
-                  "type": "string"
-                },
-                "user": {
-                  "type": "string"
-                },
-                "promoPrice": {
-                  "type": "number"
-                },
-                "transactionId": {
-                  "type": "string"
-                },
-                "redeemed": {
-                  "type": "boolean"
-                },
-                "paid": {
-                  "type": "boolean"
-                },
-                "emailTo": {
-                  "type": "string"
-                },
-                "order": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
           },
           "img": {
             "required": [
@@ -8277,31 +7572,328 @@
               }
             }
           },
+          "tagLine": {
+            "type": "string"
+          },
+          "subTitle": {
+            "type": "string"
+          },
+          "longImg": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "shortImg": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "collectionType": {
+            "type": "string",
+            "enum": [
+              "Class",
+              "Color"
+            ]
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewGiftcard": {
+      "NewClass": {
         "properties": {
-          "name": {
+          "title": {
             "type": "string"
           },
           "slug": {
             "type": "uid"
           },
-          "price": {
-            "type": "number"
-          },
-          "description": {
-            "type": "string"
-          },
-          "promos": {
+          "products": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "tagLine": {
+            "type": "string"
+          },
+          "subTitle": {
+            "type": "string"
+          },
+          "collectionType": {
+            "type": "string",
+            "enum": [
+              "Class",
+              "Color"
+            ]
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Color": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "StockDetails"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "slug": {
+                  "type": "uid"
+                },
+                "SEO": {
+                  "type": "component"
+                },
+                "ProductDetails": {
+                  "type": "component"
+                },
+                "StockDetails": {
+                  "type": "component"
+                },
+                "categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "GalleryImgs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "classes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "colors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "gallery": {
+                  "type": "component"
+                },
+                "isSoldOut": {
+                  "type": "boolean"
+                },
+                "thisFor": {
+                  "type": "string",
+                  "enum": [
+                    "Women",
+                    "Men",
+                    "Kids"
+                  ]
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewColor": {
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "priority": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",
@@ -8536,6 +8128,17 @@
                     "gallery": {
                       "type": "component"
                     },
+                    "isSoldOut": {
+                      "type": "boolean"
+                    },
+                    "thisFor": {
+                      "type": "string",
+                      "enum": [
+                        "Women",
+                        "Men",
+                        "Kids"
+                      ]
+                    },
                     "published_at": {
                       "type": "string"
                     },
@@ -8607,9 +8210,6 @@
                 "type": "string"
               },
               "promoCode": {
-                "type": "string"
-              },
-              "giftcard": {
                 "type": "string"
               },
               "user": {
@@ -8751,6 +8351,17 @@
                     },
                     "gallery": {
                       "type": "component"
+                    },
+                    "isSoldOut": {
+                      "type": "boolean"
+                    },
+                    "thisFor": {
+                      "type": "string",
+                      "enum": [
+                        "Women",
+                        "Men",
+                        "Kids"
+                      ]
                     },
                     "published_at": {
                       "type": "string"
@@ -8997,10 +8608,6 @@
               },
               "Stock": {
                 "type": "integer"
-              },
-              "isSoldOut": {
-                "type": "boolean",
-                "default": false
               }
             }
           },
@@ -9133,7 +8740,7 @@
                 "id": {
                   "type": "string"
                 },
-                "name": {
+                "title": {
                   "type": "string"
                 },
                 "slug": {
@@ -9144,6 +8751,34 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "priority": {
+                  "type": "integer"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "img": {
+                  "type": "string"
+                },
+                "tagLine": {
+                  "type": "string"
+                },
+                "subTitle": {
+                  "type": "string"
+                },
+                "longImg": {
+                  "type": "string"
+                },
+                "shortImg": {
+                  "type": "string"
+                },
+                "collectionType": {
+                  "type": "string",
+                  "enum": [
+                    "Class",
+                    "Color"
+                  ]
                 },
                 "published_at": {
                   "type": "string"
@@ -9167,7 +8802,7 @@
                 "id": {
                   "type": "string"
                 },
-                "name": {
+                "title": {
                   "type": "string"
                 },
                 "slug": {
@@ -9178,6 +8813,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "priority": {
+                  "type": "integer"
                 },
                 "published_at": {
                   "type": "string"
@@ -9470,6 +9108,18 @@
               }
             }
           },
+          "isSoldOut": {
+            "type": "boolean",
+            "default": false
+          },
+          "thisFor": {
+            "type": "string",
+            "enum": [
+              "Women",
+              "Men",
+              "Kids"
+            ]
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -9564,10 +9214,6 @@
               },
               "Stock": {
                 "type": "integer"
-              },
-              "isSoldOut": {
-                "type": "boolean",
-                "default": false
               }
             }
           },
@@ -9868,6 +9514,18 @@
               }
             }
           },
+          "isSoldOut": {
+            "type": "boolean",
+            "default": false
+          },
+          "thisFor": {
+            "type": "string",
+            "enum": [
+              "Women",
+              "Men",
+              "Kids"
+            ]
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -9891,46 +9549,6 @@
           },
           "promoCode": {
             "type": "string"
-          },
-          "giftcard": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "slug": {
-                "type": "uid"
-              },
-              "price": {
-                "type": "number"
-              },
-              "description": {
-                "type": "string"
-              },
-              "promos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "img": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
           },
           "user": {
             "required": [
@@ -10107,9 +9725,6 @@
         ],
         "properties": {
           "promoCode": {
-            "type": "string"
-          },
-          "giftcard": {
             "type": "string"
           },
           "user": {
@@ -10715,9 +10330,6 @@
                 "promoCode": {
                   "type": "string"
                 },
-                "giftcard": {
-                  "type": "string"
-                },
                 "user": {
                   "type": "string"
                 },
@@ -10923,9 +10535,6 @@
     },
     {
       "name": "Color"
-    },
-    {
-      "name": "Giftcard"
     },
     {
       "name": "Internationalization"

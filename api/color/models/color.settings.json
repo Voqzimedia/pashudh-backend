@@ -11,17 +11,20 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "name": {
+    "title": {
       "type": "string"
     },
     "slug": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "title"
     },
     "products": {
       "via": "colors",
       "collection": "product",
       "dominant": true
+    },
+    "priority": {
+      "type": "integer"
     }
   }
 }

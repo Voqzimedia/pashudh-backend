@@ -153,20 +153,6 @@ module.exports = {
       totalAmount = totalAmount - user.redeemPoints / 10;
     }
 
-    // const session = await stripe.checkout.sessions.create({
-    //   payment_method_types: ["card"],
-    //   line_items: line_items,
-    //   customer_email: user.email, //Automatically added by Magic Link
-    //   mode: "payment",
-    //   success_url: `${BASE_URL}/api/paymentIntent?session_id={CHECKOUT_SESSION_ID}`,
-    //   cancel_url: BASE_URL,
-    //   billing_address_collection: "required",
-    // });
-
-    // console.log(session);
-
-    // console.log({ totalAmount });
-
     //TODO Create Temp Order here
 
     if (saveMe == "on") {
@@ -183,7 +169,7 @@ module.exports = {
       });
     }
 
-    if (paymentGateway == "Stripe") {
+    if (paymentGateway.name == "Razorpay") {
       const newOrder = await strapi.services.order.create({
         user: user.id,
         total: totalAmount,
@@ -193,48 +179,7 @@ module.exports = {
         userPhone: phone,
         userName: name,
         promo: promo.id,
-        paymentGateway: paymentGateway,
-      });
-
-      const paymentIntent = await stripe.paymentIntents.create({
-        amount: fromDecimalToInt(totalAmount),
-        currency: "inr",
-        metadata: {
-          Customer_Name: name,
-          Customer_Email: email,
-          User_Phone: phone,
-          Site_Url: BASE_URL,
-          Order_Id: `OrderId #${newOrder.id}`,
-        },
-        receipt_email: email,
-        description: `Pashudh OrderId #${newOrder.id}`,
-      });
-
-      const updateOrder = await strapi.services.order.update(
-        {
-          id: newOrder.id,
-        },
-        {
-          transactionId: paymentIntent.id,
-        }
-      );
-
-      return {
-        client_secret: paymentIntent.client_secret,
-      };
-    } else {
-      // console.log(razorpayInstance);
-
-      const newOrder = await strapi.services.order.create({
-        user: user.id,
-        total: totalAmount,
-        Cart: cartArray,
-        address: addressTxt,
-        userEmail: email,
-        userPhone: phone,
-        userName: name,
-        promo: promo.id,
-        paymentGateway: paymentGateway,
+        paymentGateway: paymentGateway.name,
       });
 
       var options = {
@@ -259,6 +204,8 @@ module.exports = {
       return {
         order,
       };
+    } else {
+      // console.log(razorpayInstance);
     }
 
     // console.log(newOrder);
@@ -275,94 +222,9 @@ module.exports = {
    */
 
   async confirm(ctx) {
-    const { transactionId, discount, useRedeemPoints } = ctx.request.body;
-
-    const paymentIntent = await stripe.paymentIntents.retrieve(transactionId);
-
-    const { user } = ctx.state; //From JWT
-
-    // console.log("verify session", paymentIntent.status);
-
-    if (paymentIntent.status === "succeeded") {
-      if (discount) {
-        var tempPromo = await strapi.services.promo.findOne({
-          promoCode: discount.promoCode,
-        });
-
-        const redeemPromo = await strapi.services.promo.update(
-          {
-            id: tempPromo.id,
-          },
-          {
-            redeemed: true,
-          }
-        );
-      }
-
-      //Update order
-      const newOrder = await strapi.services.order.update(
-        {
-          transactionId,
-        },
-        {
-          status: "paid",
-        }
-      );
-
-      if (newOrder) {
-        if (user) {
-          if (useRedeemPoints) {
-            const updateRedeem = await strapi.plugins[
-              "users-permissions"
-            ].services.user.edit(
-              { id: user.id },
-              { redeemPoints: newOrder.total }
-            );
-          } else {
-            const updateRedeem = await strapi.plugins[
-              "users-permissions"
-            ].services.user.edit(
-              { id: user.id },
-              { redeemPoints: user.redeemPoints + newOrder.total }
-            );
-          }
-
-          // console.log(updateRedeem);
-        }
-
-        try {
-          await strapi.plugins[
-            "email-designer"
-          ].services.email.sendTemplatedEmail(
-            {
-              to: newOrder.userEmail, // required
-            },
-            {
-              templateId: 1, // required - you can get the template id from the admin panel (can change on import)
-              sourceCodeToTemplateId: 55, // ID that can be defined in the template designer (won't change on import)
-            },
-            {
-              // this object must include all variables you're using in your email template
-              order: {
-                cart: newOrder.Cart,
-                id: newOrder.id,
-                total: newOrder.total,
-              },
-            }
-          );
-        } catch (err) {
-          strapi.log.debug("📺: ", err);
-          return ctx.badRequest(null, err);
-        }
-      }
-
-      return sanitizeEntity(newOrder, { model: strapi.models.order });
-    } else {
-      ctx.throw(
-        400,
-        "It seems like the order wasn't verified, please contact support"
-      );
-    }
+    return {
+      status: true,
+    };
   },
 
   /**
@@ -372,7 +234,7 @@ module.exports = {
    */
 
   async confirmRazerpay(ctx) {
-    const { transaction, discount } = ctx.request.body;
+    const { transaction, discount, useRedeemPoints } = ctx.request.body;
 
     // const paymentIntent = await stripe.paymentIntents.retrieve(transactionId);
 
@@ -424,14 +286,14 @@ module.exports = {
               "users-permissions"
             ].services.user.edit(
               { id: user.id },
-              { redeemPoints: newOrder.total }
+              { redeemPoints: updatedOrder.total }
             );
           } else {
             const updateRedeem = await strapi.plugins[
               "users-permissions"
             ].services.user.edit(
               { id: user.id },
-              { redeemPoints: user.redeemPoints + newOrder.total }
+              { redeemPoints: user.redeemPoints + updatedOrder.total }
             );
           }
 

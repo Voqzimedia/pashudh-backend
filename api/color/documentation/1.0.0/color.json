@@ -522,7 +522,7 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string"
           },
           "slug": {
@@ -590,6 +590,17 @@
                 "gallery": {
                   "type": "component"
                 },
+                "isSoldOut": {
+                  "type": "boolean"
+                },
+                "thisFor": {
+                  "type": "string",
+                  "enum": [
+                    "Women",
+                    "Men",
+                    "Kids"
+                  ]
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -602,6 +613,9 @@
               }
             }
           },
+          "priority": {
+            "type": "integer"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -610,7 +624,7 @@
       },
       "NewColor": {
         "properties": {
-          "name": {
+          "title": {
             "type": "string"
           },
           "slug": {
@@ -621,6 +635,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "priority": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",
