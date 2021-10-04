@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/29/2021 2:50:18 PM"
+    "x-generation-date": "10/04/2021 4:09:58 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2792,6 +2792,63 @@
         }
       }
     },
+    "my/orders": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Order"
+        ],
+        "parameters": []
+      }
+    },
     "/orders/count": {
       "get": {
         "deprecated": false,
@@ -2847,6 +2904,74 @@
           "Order"
         ],
         "parameters": []
+      }
+    },
+    "my/order/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Retrieve order document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       }
     },
     "/orders/{id}": {
@@ -3047,6 +3172,77 @@
             }
           }
         ]
+      }
+    },
+    "/orders/checkout": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Order"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/products": {
@@ -7265,6 +7461,9 @@
                     "Kids"
                   ]
                 },
+                "tax": {
+                  "type": "number"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -7486,6 +7685,9 @@
                     "Men",
                     "Kids"
                   ]
+                },
+                "tax": {
+                  "type": "number"
                 },
                 "published_at": {
                   "type": "string"
@@ -7857,6 +8059,9 @@
                     "Kids"
                   ]
                 },
+                "tax": {
+                  "type": "number"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -8139,6 +8344,9 @@
                         "Kids"
                       ]
                     },
+                    "tax": {
+                      "type": "number"
+                    },
                     "published_at": {
                       "type": "string"
                     },
@@ -8362,6 +8570,9 @@
                         "Men",
                         "Kids"
                       ]
+                    },
+                    "tax": {
+                      "type": "number"
                     },
                     "published_at": {
                       "type": "string"
@@ -9120,6 +9331,9 @@
               "Kids"
             ]
           },
+          "tax": {
+            "type": "number"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -9525,6 +9739,9 @@
               "Men",
               "Kids"
             ]
+          },
+          "tax": {
+            "type": "number"
           },
           "published_at": {
             "type": "string",

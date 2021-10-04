@@ -1185,6 +1185,9 @@
               "Kids"
             ]
           },
+          "tax": {
+            "type": "number"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -1590,6 +1593,9 @@
               "Men",
               "Kids"
             ]
+          },
+          "tax": {
+            "type": "number"
           },
           "published_at": {
             "type": "string",

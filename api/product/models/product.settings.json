@@ -89,6 +89,9 @@
         "Men",
         "Kids"
       ]
+    },
+    "tax": {
+      "type": "decimal"
     }
   }
 }

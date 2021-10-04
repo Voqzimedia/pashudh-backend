@@ -26,8 +26,24 @@
     },
     {
       "method": "GET",
+      "path": "my/orders",
+      "handler": "order.findMyOrders",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/orders/count",
       "handler": "order.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "my/order/:id",
+      "handler": "order.findMyOrder",
       "config": {
         "policies": []
       }
@@ -44,6 +60,14 @@
       "method": "POST",
       "path": "/orders",
       "handler": "order.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/orders/checkout",
+      "handler": "order.checkout",
       "config": {
         "policies": []
       }
