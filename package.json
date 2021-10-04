@@ -12,6 +12,7 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "crypto-js": "^4.1.1",
     "graphql": "^15.5.0",
     "knex": "0.21.18",
     "pg": "^8.5.1",

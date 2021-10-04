@@ -1,7 +1,9 @@
 "use strict";
 const { sanitizeEntity } = require("strapi-utils");
 
-const stripe = require("stripe")(process.env.STRIPE_PK);
+var hmac_sha256 = require("crypto-js/hmac-sha256");
+
+// const stripe = require("stripe")(process.env.STRIPE_PK);
 const Razorpay = require("razorpay");
 
 var razorpayInstance = new Razorpay({
@@ -9,22 +11,8 @@ var razorpayInstance = new Razorpay({
   key_secret: process.env.RAZORPAY_SECRET,
 });
 
-/**
- * Given a dollar amount number, convert it to it's value in cents
- * @param {Int} number
- */
 const fromDecimalToInt = (number) => parseInt(number * 100);
 
-/**
- * Read the documentation (https://strapi.io/documentation/v3.x/concepts/controllers.html#core-controllers)
- * to customize this controller
- */
-
-/**
- * Retrieve the real product here ?
- * @param {String} slug
- * @returns
- */
 const isRealProduct = async (slug) => {
   const realProduct = await strapi.services.product.findOne({ slug: slug });
 
@@ -32,11 +20,7 @@ const isRealProduct = async (slug) => {
 };
 
 module.exports = {
-  /**
-   * Only send back orders from you
-   * @param {*} ctx
-   */
-  async find(ctx) {
+  async findMyOrders(ctx) {
     const { user } = ctx.state;
     let entities;
     if (ctx.query._q) {
@@ -55,10 +39,8 @@ module.exports = {
       sanitizeEntity(entity, { model: strapi.models.order })
     );
   },
-  /**
-   * Retrieve an order by id, only if it belongs to the user
-   */
-  async findOne(ctx) {
+
+  async findMyOrder(ctx) {
     const { id } = ctx.params;
     const { user } = ctx.state;
 
@@ -66,13 +48,7 @@ module.exports = {
     return sanitizeEntity(entity, { model: strapi.models.order });
   },
 
-  /**
-   * Create Orders
-   * @param {*} ctx
-   * @returns session
-   */
-
-  async create(ctx) {
+  async checkout(ctx) {
     const BASE_URL = ctx.request.headers.origin || "http://localhost:3000"; //So we can redirect back
 
     const {
@@ -91,8 +67,6 @@ module.exports = {
       return res.status(400).send({ error: "Please add a cart items to body" });
     }
 
-    // console.log({ useRedeemPoints });
-
     var i;
 
     const cartArray = [];
@@ -105,7 +79,37 @@ module.exports = {
       promoPrice: 0,
     };
 
-    const { user } = ctx.state; //From JWT
+    var { user } = ctx.state; //From JWT
+
+    if (!user) {
+      user = await strapi.plugins["users-permissions"].services.user.fetch({
+        email,
+      });
+      // console.log(user);
+      if (!user) {
+        const advanced = await strapi
+          .store({
+            environment: "",
+            type: "plugin",
+            name: "users-permissions",
+            key: "advanced",
+          })
+          .get();
+
+        const defaultRole = await strapi
+          .query("role", "users-permissions")
+          .findOne({ type: advanced.default_role }, []);
+
+        user = await strapi.plugins["users-permissions"].services.user.add({
+          email: email.toLowerCase(),
+          username: name,
+          provider: "local",
+          confirmed: false,
+          role: defaultRole.id,
+          phone,
+        });
+      }
+    }
 
     for (i = 0; i < cartItems.length; i++) {
       var realProduct = await isRealProduct(cartItems[i].slug);
@@ -169,7 +173,7 @@ module.exports = {
       });
     }
 
-    if (paymentGateway.name == "Razorpay") {
+    if (paymentGateway == "Razorpay") {
       const newOrder = await strapi.services.order.create({
         user: user.id,
         total: totalAmount,
@@ -205,7 +209,7 @@ module.exports = {
         order,
       };
     } else {
-      // console.log(razorpayInstance);
+      console.log("COD");
     }
 
     // console.log(newOrder);
@@ -215,28 +219,14 @@ module.exports = {
     // };
   },
 
-  /**
-   * Payment Confirm for the order
-   * @param {*} ctx
-   * @returns
-   */
-
   async confirm(ctx) {
     return {
       status: true,
     };
   },
 
-  /**
-   * Payment Confirm for the order
-   * @param {*} ctx
-   * @returns
-   */
-
   async confirmRazerpay(ctx) {
     const { transaction, discount, useRedeemPoints } = ctx.request.body;
-
-    // const paymentIntent = await stripe.paymentIntents.retrieve(transactionId);
 
     var thisOrder = await strapi.services.order.findOne({
       transactionId: transaction.razorpay_order_id,
@@ -244,98 +234,104 @@ module.exports = {
 
     const { user } = ctx.state; //From JWT
 
-    // console.log({ transaction, thisOrder });
+    const generated_signature = hmac_sha256(
+      transaction.razorpay_order_id + "|" + transaction.razorpay_payment_id,
+      process.env.RAZORPAY_SECRET
+    );
 
-    if (thisOrder) {
-      if (discount) {
-        var tempPromo = await strapi.services.promo.findOne({
-          promoCode: discount.promoCode,
-        });
+    if (generated_signature == transaction.razorpay_signature) {
+      if (thisOrder) {
+        if (discount) {
+          var tempPromo = await strapi.services.promo.findOne({
+            promoCode: discount.promoCode,
+          });
 
-        const redeemPromo = await strapi.services.promo.update(
-          {
-            id: tempPromo.id,
-          },
-          {
-            redeemed: true,
-          }
-        );
-      }
-
-      //Update order
-      const newOrder = await strapi.services.order.update(
-        {
-          transactionId: transaction.razorpay_order_id,
-        },
-        {
-          status: "paid",
-          transactionId: transaction.razorpay_payment_id,
-        }
-      );
-
-      const updatedOrder = await strapi.services.order.findOne({
-        transactionId: transaction.razorpay_payment_id,
-      });
-
-      // console.log(updatedOrder);
-
-      if (updatedOrder) {
-        if (user) {
-          if (useRedeemPoints) {
-            const updateRedeem = await strapi.plugins[
-              "users-permissions"
-            ].services.user.edit(
-              { id: user.id },
-              { redeemPoints: updatedOrder.total }
-            );
-          } else {
-            const updateRedeem = await strapi.plugins[
-              "users-permissions"
-            ].services.user.edit(
-              { id: user.id },
-              { redeemPoints: user.redeemPoints + updatedOrder.total }
-            );
-          }
-
-          // console.log(updateRedeem);
-        }
-
-        try {
-          await strapi.plugins[
-            "email-designer"
-          ].services.email.sendTemplatedEmail(
+          const redeemPromo = await strapi.services.promo.update(
             {
-              to: updatedOrder.userEmail, // required
+              id: tempPromo.id,
             },
             {
-              templateId: 1, // required - you can get the template id from the admin panel (can change on import)
-              sourceCodeToTemplateId: 55, // ID that can be defined in the template designer (won't change on import)
-            },
-            {
-              // this object must include all variables you're using in your email template
-              order: {
-                cart: updatedOrder.Cart,
-                id: updatedOrder.id,
-                total: updatedOrder.total,
-              },
+              redeemed: true,
             }
           );
-        } catch (err) {
-          strapi.log.debug("📺: ", err);
-          return ctx.badRequest(null, err);
         }
-      }
 
-      return sanitizeEntity(updatedOrder, { model: strapi.models.order });
+        //Update order
+        const newOrder = await strapi.services.order.update(
+          {
+            transactionId: transaction.razorpay_order_id,
+          },
+          {
+            status: "paid",
+            transactionId: transaction.razorpay_payment_id,
+          }
+        );
+
+        const updatedOrder = await strapi.services.order.findOne({
+          transactionId: transaction.razorpay_payment_id,
+        });
+
+        // console.log(updatedOrder);
+
+        if (updatedOrder) {
+          if (user) {
+            if (useRedeemPoints) {
+              const updateRedeem = await strapi.plugins[
+                "users-permissions"
+              ].services.user.edit(
+                { id: user.id },
+                { redeemPoints: updatedOrder.total }
+              );
+            } else {
+              const updateRedeem = await strapi.plugins[
+                "users-permissions"
+              ].services.user.edit(
+                { id: user.id },
+                { redeemPoints: user.redeemPoints + updatedOrder.total }
+              );
+            }
+
+            // console.log(updateRedeem);
+          }
+
+          try {
+            await strapi.plugins[
+              "email-designer"
+            ].services.email.sendTemplatedEmail(
+              {
+                to: updatedOrder.userEmail, // required
+              },
+              {
+                templateId: 1, // required - you can get the template id from the admin panel (can change on import)
+                sourceCodeToTemplateId: 55, // ID that can be defined in the template designer (won't change on import)
+              },
+              {
+                // this object must include all variables you're using in your email template
+                order: {
+                  cart: updatedOrder.Cart,
+                  id: updatedOrder.id,
+                  total: updatedOrder.total,
+                },
+              }
+            );
+          } catch (err) {
+            strapi.log.debug("📺: ", err);
+            return ctx.badRequest(null, err);
+          }
+        }
+
+        return sanitizeEntity(updatedOrder, { model: strapi.models.order });
+      } else {
+        ctx.throw(
+          400,
+          "It seems like the order wasn't verified, please contact support"
+        );
+      }
     } else {
       ctx.throw(
         400,
-        "It seems like the order wasn't verified, please contact support"
+        "It seems like the Payment wasn't verified, please contact support"
       );
     }
-
-    // return {
-    //   status: true,
-    // };
   },
 };

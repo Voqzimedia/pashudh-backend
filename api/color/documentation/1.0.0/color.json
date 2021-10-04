@@ -601,6 +601,9 @@
                     "Kids"
                   ]
                 },
+                "tax": {
+                  "type": "number"
+                },
                 "published_at": {
                   "type": "string"
                 },
