@@ -154,7 +154,7 @@ module.exports = {
     }
 
     if (useRedeemPoints) {
-      totalAmount = totalAmount - user.redeemPoints / 10;
+      totalAmount = totalAmount - user.redeemPoints / 100;
     }
 
     //TODO Create Temp Order here
