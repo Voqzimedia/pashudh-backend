@@ -866,7 +866,6 @@
             "enum": [
               "paid",
               "unpaid",
-              "processing",
               "completed",
               "refunded",
               "canceled",
@@ -1168,7 +1167,6 @@
             "enum": [
               "paid",
               "unpaid",
-              "processing",
               "completed",
               "refunded",
               "canceled",

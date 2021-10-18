@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "10/04/2021 4:09:58 PM"
+    "x-generation-date": "10/18/2021 3:19:44 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -8174,7 +8174,6 @@
             "enum": [
               "paid",
               "unpaid",
-              "processing",
               "completed",
               "refunded",
               "canceled",
@@ -8476,7 +8475,6 @@
             "enum": [
               "paid",
               "unpaid",
-              "processing",
               "completed",
               "refunded",
               "canceled",
@@ -9875,7 +9873,6 @@
                 "enum": [
                   "paid",
                   "unpaid",
-                  "processing",
                   "completed",
                   "refunded",
                   "canceled",
@@ -10374,7 +10371,6 @@
                   "enum": [
                     "paid",
                     "unpaid",
-                    "processing",
                     "completed",
                     "refunded",
                     "canceled",

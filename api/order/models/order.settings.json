@@ -16,7 +16,6 @@
       "enum": [
         "paid",
         "unpaid",
-        "processing",
         "completed",
         "refunded",
         "canceled",
@@ -28,9 +27,9 @@
       "type": "decimal"
     },
     "user": {
-      "via": "orders",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "orders"
     },
     "Cart": {
       "type": "component",
@@ -55,8 +54,8 @@
       "type": "string"
     },
     "promo": {
-      "via": "order",
-      "model": "promo"
+      "model": "promo",
+      "via": "order"
     },
     "userPhone": {
       "type": "string"
