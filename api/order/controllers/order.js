@@ -225,6 +225,33 @@ module.exports = {
     };
   },
 
+  async fullfill(ctx) {
+    const { id } = ctx.params;
+    const { user } = ctx.state;
+
+    const { body } = ctx.request;
+
+    const entity = await strapi.services.order.findOne({ id, status: "paid" });
+
+    if (!entity) {
+      return res.status(400).send({ error: "Order is not processble" });
+    }
+
+    const FullfilledOrder = await strapi.services.order.update(
+      {
+        id: entity.id,
+      },
+      {
+        status: "completed",
+        Shipping: body,
+      }
+    );
+
+    // console.log({ FullfilledOrder });
+
+    return sanitizeEntity(FullfilledOrder, { model: strapi.models.order });
+  },
+
   async confirmRazerpay(ctx) {
     const { transaction, discount, useRedeemPoints } = ctx.request.body;
 
