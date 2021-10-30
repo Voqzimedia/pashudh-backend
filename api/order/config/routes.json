@@ -18,6 +18,30 @@
     },
     {
       "method": "POST",
+      "path": "/orders/cancel/:id",
+      "handler": "order.cancel",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/orders/hold/:id",
+      "handler": "order.hold",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/orders/refund/:id",
+      "handler": "order.refund",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
       "path": "/orders/confirmRazerpay",
       "handler": "order.confirmRazerpay",
       "config": {

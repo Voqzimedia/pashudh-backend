@@ -227,7 +227,6 @@ module.exports = {
 
   async fullfill(ctx) {
     const { id } = ctx.params;
-    const { user } = ctx.state;
 
     const { body } = ctx.request;
 
@@ -250,6 +249,75 @@ module.exports = {
     // console.log({ FullfilledOrder });
 
     return sanitizeEntity(FullfilledOrder, { model: strapi.models.order });
+  },
+
+  async cancel(ctx) {
+    const { id } = ctx.params;
+
+    const entity = await strapi.services.order.findOne({ id });
+
+    if (!entity) {
+      return res.status(400).send({ error: "Order is not processble" });
+    }
+
+    const canceledOrder = await strapi.services.order.update(
+      {
+        id: entity.id,
+      },
+      {
+        status: "canceled",
+      }
+    );
+
+    // console.log({ FullfilledOrder });
+
+    return sanitizeEntity(canceledOrder, { model: strapi.models.order });
+  },
+
+  async hold(ctx) {
+    const { id } = ctx.params;
+
+    const entity = await strapi.services.order.findOne({ id });
+
+    if (!entity) {
+      return res.status(400).send({ error: "Order is not processble" });
+    }
+
+    const canceledOrder = await strapi.services.order.update(
+      {
+        id: entity.id,
+      },
+      {
+        status: "hold",
+      }
+    );
+
+    // console.log({ FullfilledOrder });
+
+    return sanitizeEntity(canceledOrder, { model: strapi.models.order });
+  },
+
+  async refund(ctx) {
+    const { id } = ctx.params;
+
+    const entity = await strapi.services.order.findOne({ id, status: "paid" });
+
+    if (!entity) {
+      return res.status(400).send({ error: "Order is not processble" });
+    }
+
+    const canceledOrder = await strapi.services.order.update(
+      {
+        id: entity.id,
+      },
+      {
+        status: "refunded",
+      }
+    );
+
+    // console.log({ FullfilledOrder });
+
+    return sanitizeEntity(canceledOrder, { model: strapi.models.order });
   },
 
   async confirmRazerpay(ctx) {
