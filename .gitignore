@@ -122,3 +122,4 @@ build
 yarn.lock
 yarn-error.log
 .strapi-updater.json
+extensions/documentation/public/index.html
